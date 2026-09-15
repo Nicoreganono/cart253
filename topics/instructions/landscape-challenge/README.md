@@ -1,6 +1,6 @@
-# TITLE OF PROJECT
+# Hotline Miami
 
-AUTHOR NAME
+Nicola & Alice
 
 [View this project online](https://nicoreganono.github.io/cart253/topics/instructions/landscape-challenge)
 
