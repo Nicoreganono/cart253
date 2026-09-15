@@ -17,7 +17,7 @@ While self explanatory, this journal will have active updates to new projects, w
 
 This is, as the link suggest, my portfolio, done in early 2026. It compiles a lot of my best/favourite work and previous school projects, which allowed me to be admitted into concordia and CART253 in the first place!
 
-[Instagram art dump](www.instagram.com/nicolartistic?igsh=d3QxeW5lbHh5cHJi)
+[Instagram art dump](https://www.instagram.com/nicolartistic?fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAac4Vw6cVegBkPB75jAguDTkm7DCcR_sdWqc7iWvo91wNcLMOX1fNd7qxY1y7g_aem_oRrgki3z-03_g16knSIL_w)
 
 My fairly innactive art dump. It's unfortunate drawing isn't a habbit for me at all, there could be so much more. Even then, it's a nice little dump, there's some cool stuff there.
 
