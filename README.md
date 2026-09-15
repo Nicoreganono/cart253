@@ -21,7 +21,7 @@ This will essentially be a compilation of various projects and prototypes from t
 
 This is, as the link suggest, my portfolio, done in early 2026. It compiles a lot of my best/favourite work and previous school projects, which allowed me to be admitted into concordia and CART253 in the first place!
 
--instagram link- 
+[Instagram art dump](www.instagram.com/nicolartistic?igsh=d3QxeW5lbHh5cHJi)
 
 
 ## What has been done:
