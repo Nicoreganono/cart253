@@ -4,18 +4,14 @@
 
 Learning how computers really work is useful on a number of levels I can't even begin to emphasize. The problem is, it's quite daunting to take on a seemingly impossible task. Nevertheless, it seems to me the task is indeed necessary to uphold in today's world, therefore I shall. With great help. But I shall.
 
-This will essentially be a compilation of various projects and prototypes from the beginning of my computation days in Creative Computation at Concordia. [^1]
-
-
-
-[^1]: Hence cart253 for the repository name
+This will essentially be a compilation of various projects and prototypes from the beginning of my computation days in Creative Computation at Concordia.
 
 # Active journal: 
--journal.md link- 
+[Journal](https://nicoreganono.github.io/cart253/journal.md)
+
+While self explanatory, this journal will have active updates to new projects, what I've learned and struggled with.
 
 ## What had been done:
-
-
 
 [Portfolio](https://nicofou6.wixsite.com/portfolio2026)
 
@@ -31,3 +27,7 @@ My fairly innactive art dump. It's unfortunate drawing isn't a habbit for me at 
 [Basic JS code manipulation](https://nicoreganono.github.io/cart253/topics/hello-world/version-control-workflow/)
 
 The purpose of this project was simply to understand the basics of GitHub as a repository platform and VS Code. The takeaway is simple : Version control is NOT just important, it is **MANDATORY**.
+
+[Landscape challenge](https://nicoreganono.github.io/cart253/topics/instructions/landscape-challenge)
+
+In this project, I worked with a classmate to figure out how to manipulate the different values of shapes and other functions to make a complete image. I'm quite proud of the result.
