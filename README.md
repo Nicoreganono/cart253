@@ -7,7 +7,7 @@ Learning how computers really work is useful on a number of levels I can't even 
 This will essentially be a compilation of various projects and prototypes from the beginning of my computation days in Creative Computation at Concordia.
 
 # Active journal: 
-[Journal](https://nicoreganono.github.io/cart253/journal.md)
+[Journal](https://nicoreganono.github.io/cart253/journal)
 
 While self explanatory, this journal will have active updates to new projects, what I've learned and struggled with.
 
