@@ -42,4 +42,16 @@ function draw() {
     triangle(370, 80, 320, 160, 300, 65)
     triangle(450, 100, 350, 180, 330, 70)
     triangle(330, 70, 300, 180, 250, 60)
+    //Eyes
+    ellipse(130, 230, 100)
+    ellipse(270, 230, 100)
+
+    fill("black")
+    ellipse(130, 230, 30)
+
+    ellipse(270, 230, 50)
+    fill("white")
+    ellipse(280, 222, 15)
+    ellipse(135, 225, 10)
+    //Now he looks like caine from TADC, but oh well, I think its cool
 }
