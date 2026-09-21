@@ -1,12 +1,12 @@
-# TITLE OF PROJECT
+# Void Eater
 
-AUTHOR NAME
+Nicola Fournier
 
-[View this project online](URL_FOR_THE_RUNNING_PROJECT)
+[View this project online](https://nicoreganono.github.io/cart253/topics/prototypes/P5Project1/)
 
 ## Description
 
-This description should help the reader understand what the program is, anything they should know to be able to experience it (controls, special features, etc.), and what the desired user experience is. For example:
+This arrangement of p5.js represents a large mouth with large teeth with two eyes inside.
 
 ## Attribution
 
@@ -18,6 +18,4 @@ This bit should attribute any code, assets or other elements used taken from oth
 
 ## License
 
-This bit could include the license you want to apply to your work. For example:
-
-> This project is licensed under a Creative Commons Attribution ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en)) license with the exception of libraries and other components with their own licenses.
+No license required!
