@@ -2,7 +2,7 @@
  * LazerTank
  * Nicola Fournier
  * 
- * This is project 2 of 3 of p5 script manipulation.
+ * This is project 2     of 3 of p5 script manipulation.
  */
 
 "use strict";
