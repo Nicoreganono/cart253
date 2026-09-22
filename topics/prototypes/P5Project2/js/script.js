@@ -12,6 +12,13 @@ function setup() {
 }
 
 function draw() {
+    //Make a cute little tank looking thing
+  fill(240,240,240)
+   rect(320,225,80,25)
+  rect(340,200,80,60)
+  rect(300,200,50,30)
+  rect(270,200,30,25)
+rect(360,227,80,29)
     //Make a sick ass lazer beam
   fill(10,120,180)
  rect(120,200,280,70,20)
