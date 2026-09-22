@@ -1,12 +1,12 @@
-# Void Eater
+# LazerTank
 
 Nicola Fournier
 
-[View this project online](https://nicoreganono.github.io/cart253/topics/prototypes/P5Project1/)
+[View this project online](https://nicoreganono.github.io/cart253/topics/prototypes/P5Project2/)
 
 ## Description
 
-This arrangement of p5.js represents a large mouth with large teeth with two eyes inside.
+This arrangement of p5.js represents a small blocky tank shooting out a devastating beam of light.
 
 ## Attribution
 
