@@ -1,8 +1,8 @@
 /**
- * Voideater
+ * LazerTank
  * Nicola Fournier
  * 
- * This is project 1 of 3 of p5 script manipulation.
+ * This is project 2 of 3 of p5 script manipulation.
  */
 
 "use strict";
@@ -12,6 +12,11 @@ function setup() {
 }
 
 function draw() {
+    //Make a simple background
+      background(20,140,190);
+  rectMode(CENTER)
+  fill(130,120,120)
+  rect(200,400,500,350)
     //Make a cute little tank looking thing
   fill(240,240,240)
    rect(320,225,80,25)
@@ -30,5 +35,5 @@ rect(360,227,80,29)
  rect(115,200,260,40,20)
   fill(240,240,255)
  rect(115,200,260,20,20)
-  
+ //This is actually super cool to me, its simple but effective. 
 }
