@@ -1,12 +1,12 @@
-# LazerTank
+# OrbitConflict
 
 Nicola Fournier
 
-[View this project online](https://nicoreganono.github.io/cart253/topics/prototypes/P5Project2/)
+[View this project online](https://nicoreganono.github.io/cart253/topics/prototypes/P5Project3/)
 
 ## Description
 
-This arrangement of p5.js represents a small blocky tank shooting out a devastating beam of light.
+This arrangement of p5.js represents a plethora of different celestial bodies orbiting at different rates.
 
 ## Attribution
 
