@@ -39,16 +39,24 @@ function draw() {
     let orb1x = constrain(orb1.x, 0, 400)
     let orb1y = constrain(orb1.y, 0, 400)
 
-    //make it happen
+    //make the orb happen
     drawOrb1();
-
+    //make the string happen
+    drawString1();
     function drawOrb1() {
         push();
         noStroke();
         fill(orb1.fill);
         ellipse(orb1x, orb1y, orb1.size)
         pop();
-
+    }
+    function drawString1() {
+        push();
+        //the string is the same color as the ball
+        stroke(orb1.fill);
+        //the string is between the mouse and the ball
+        line(orb1x, orb1y, mouseX, mouseY);
+        pop();
     }
 
 }
