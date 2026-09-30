@@ -11,27 +11,30 @@ let eclipse = {
     x: 0,
     y: 0,
     s: 35,
-    fill: "black",
-
+    fill: (0, 0, 0),
 }
+
 function setup() {
     createCanvas(400, 400);
+
 }
 
 function draw() {
     background(100);
-
+    //make the gradually lighter color variable
+    let c = color((frameCount - 100) / 2, (frameCount - 100) / 4, (frameCount - 100) / 10)
+    //make the sun light up after a certain amount of frames
     if (frameCount > 100) {
 
-        eclipse.fill = "orange";
+        eclipse.fill = (c);
 
     } else if (frameCount < 100) {
         eclipse.fill = "black"
     }
-    //make the origin centered to the canvas
+    // set the origin at the center of the canvas
     translate(200, 200)
-    //make orbiting planets
-    let angle = (frameCount * frameCount * frameCount * frameCount * 0.0000000001)
+    //make orbiting planets that accelerate
+    let angle = (frameCount * frameCount * frameCount * frameCount * 0.00000000001)
     rotate(angle / 10)
     ellipse(40, 20, 20)
     rotate(angle / 20)
