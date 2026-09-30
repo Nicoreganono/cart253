@@ -1,8 +1,8 @@
 /**
- * Sticky Orbs
+ * Meaningless Universe
  * Nicola Fournier
  * 
- * A collection of small orbs orbiting the cursor, sticking and bouncing off the walls wildly.
+ * A solar system that rapidly accelerate as time moves faster (MEANT TO BE WATCHED ALONGSIDE "NO TIME FOR CAUTION" FROM THE INTERSTELLAR OST)
  */
 
 "use strict";
@@ -20,21 +20,31 @@ function setup() {
 }
 
 function draw() {
-    background(100);
+    //make the gradually darker color variable
+    let b = color((-frameCount + 11000) / 10, (-frameCount + 11000) / 10, (-frameCount + 11000) / 10)
+    //make space darken after a certain amount of frames
+    if (frameCount > 10000) {
+
+        background(b)
+
+    } else if (frameCount < 10000) {
+        background(100);
+    }
+
     //make the gradually lighter color variable
-    let c = color((frameCount - 100) / 2, (frameCount - 100) / 4, (frameCount - 100) / 10)
+    let e = color((frameCount - 200) / 4, (frameCount - 100) / 8, (frameCount - 200) / 60)
     //make the sun light up after a certain amount of frames
-    if (frameCount > 100) {
+    if (frameCount > 200) {
 
-        eclipse.fill = (c);
+        eclipse.fill = (e);
 
-    } else if (frameCount < 100) {
+    } else if (frameCount < 200) {
         eclipse.fill = "black"
     }
     // set the origin at the center of the canvas
     translate(200, 200)
     //make orbiting planets that accelerate
-    let angle = (frameCount * frameCount * frameCount * frameCount * 0.00000000001)
+    let angle = ((frameCount * frameCount * frameCount * frameCount * 0.0000000000075) / 2)
     rotate(angle / 10)
     ellipse(40, 20, 20)
     rotate(angle / 20)
