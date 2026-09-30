@@ -1,8 +1,8 @@
 /**
- * Sticky Orbs
+ * AbsORBing
  * Nicola Fournier
  * 
- * A collection of small orbs orbiting the cursor, sticking and bouncing off the walls wildly.
+ * A crystal ball that absorbs and releases surrounding energy
  */
 
 "use strict";
@@ -16,21 +16,27 @@ let crystal = {
 
 function setup() {
     createCanvas(400, 400);
-    background(220);
+
 
 }
 
 function draw() {
+    //set a rng
+    let r = random(0.1, 2);
+    //remap the values for the background to creat a reverse effect
+    let x = map(mouseX, 0, 400, 400, 0)
+    let y = map(mouseY, 0, 400, 400, 0)
+    background(x * r / 4, x / 2, y / 2);
     drawCrystal()
 
-    //have the crystal's color change and flicker depending on the position of the cursor
+
     function drawCrystal() {
         push()
-        let r = random(0.1, 2);
-        stroke((mouseX * r, mouseX, mouseY) * 0.1)
-        fill(mouseX * r, mouseX, mouseY)
-        ellipse(crystal.x, crystal.y, crystal.size)
+        //make the crystal's color dependent on the rng and the mouse position
+        stroke(mouseX * r / 2, mouseX / 2, mouseY / 2);
+        strokeWeight(10);
+        fill(mouseX * r, mouseX, mouseY);
+        ellipse(crystal.x, crystal.y, crystal.size);
     }
 
 }
-
