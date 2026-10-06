@@ -1,5 +1,5 @@
 /**
- * Do not get bit
+ * Do not get eaten
  * Nico
  * 
  * The shark is coming for you, and he's very hungry.
