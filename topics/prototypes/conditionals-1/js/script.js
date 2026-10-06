@@ -1,24 +1,34 @@
 /**
- * Title of Project
- * Author Name
+ * Do not get bit
+ * Nico
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * The shark is coming for you, and he's very hungry.
  */
 
 "use strict";
-
-/**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
-*/
-function setup() {
+//establish a dangerous (more stereotypically than normal) underwater predator
+let shark = {
+    x: 700,
+    y: 360,
+    sx: 50,
+    sy: 20,
+    fill: "#0a1432"
 
 }
 
+function setup() {
+    createCanvas(800, 400);
+}
 
-/**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
-*/
 function draw() {
+    background("skyblue");
+    //make the shark appear
+    drawShark();
+}
+
+function drawShark() {
+    fill(shark.fill)
+    ellipse(shark.x, shark.y, shark.sx, shark.sy)
+
 
 }
