@@ -20,18 +20,49 @@ let shark = {
     fill: "#0a1432"
 
 }
+// Starting and end texts.
+let titleString = "Fish food - press e to start";
+let endingString = "Enjoy the bowels of a deep sea creature...";
+
+//start the sequence with the title
+let state = "title";
 
 function setup() {
     createCanvas(800, 400);
+    d = dist(mouseX, mouseY, pmouseX, pmouseY)
 }
 
 function draw() {
+    if (state === "title") {
+        title();
+    }
+    else if (state === "devouring") {
+        devouring();
+    }
+    else if (state === "ending") {
+        ending();
+    }
+}
+function title() {
+    background("#0000ff");
 
+    push();
+    fill("#ffffff");
+    text(titleString, width / 2, height / 2)
+    pop();
+
+    if (keyIsPressed === true) {
+        if (key === 'e') {
+            state = "devouring";
+        }
+    }
+}
+function devouring() {
     background("skyblue");
     //make the shark follow the cursor
     shark.velocity.x += (mouseX - shark.x) / 100
     shark.velocity.y += (mouseY - shark.y) / 100
-    //make it follow harder when at the right of the canvas
+    //make it follow the cursor harder when on the right side of the canvas
     if (mouseX > 400) {
         shark.velocity.x += (mouseX - shark.x) / 80
         shark.velocity.y += (mouseY - shark.y) / 80
