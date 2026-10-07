@@ -31,3 +31,21 @@ The purpose of this project was simply to understand the basics of GitHub as a r
 [Landscape challenge](https://nicoreganono.github.io/cart253/topics/instructions/landscape-challenge)
 
 In this project, I worked with a classmate to figure out how to manipulate the different values of shapes and other functions to make a complete image. I'm quite proud of the result.
+
+[Landscape prototype 1](https://nicoreganono.github.io/cart253/topics/prototypes/P5Project1)
+[Landscape prototype 2](https://nicoreganono.github.io/cart253/topics/prototypes/P5Project2)
+[Landscape prototype 3](https://nicoreganono.github.io/cart253/topics/prototypes/P5Project3)
+
+This project's aim was essentially to manipulate shapes in various ways to represent various things. The focus was to understand the different values of different p5.js functions
+
+[Variables prototypes 1](https://nicoreganono.github.io/cart253/topics/prototypes/variables-1)
+[Variables prototypes 2](https://nicoreganono.github.io/cart253/topics/prototypes/variables-2)
+[Variables prototypes 3](https://nicoreganono.github.io/cart253/topics/prototypes/variables-3)
+
+This project was made for me to establish various variables into a .js code. The focus was to understand how variables and different established functions can help complexify the code while keeping it organized and flexible.
+
+[Conditionals prototypes 1](https://nicoreganono.github.io/cart253/topics/prototypes/conditionals-1)
+[Conditionals prototypes 2](https://nicoreganono.github.io/cart253/topics/prototypes/conditionals-2)
+[Conditionals prototypes 3](https://nicoreganono.github.io/cart253/topics/prototypes/conditionals-3)
+
+For this project, "if" statements were at the center of the assignment. I was to understand how many doors "if" statements open and how much more interesting code can be.
