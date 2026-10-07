@@ -116,7 +116,10 @@ function draw() {
     drawBlue();
     drawPink();
     drawBlack();
-    drawPaint();
+    //only paint when the mouse is pressed
+    if (mouseIsPressed) {
+        drawPaint();
+    }
 }
 
 function drawRed() {
