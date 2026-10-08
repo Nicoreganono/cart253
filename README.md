@@ -36,6 +36,10 @@ In this project, I worked with a classmate to figure out how to manipulate the d
 [Landscape prototype 2](https://nicoreganono.github.io/cart253/topics/prototypes/P5Project2)
 [Landscape prototype 3](https://nicoreganono.github.io/cart253/topics/prototypes/P5Project3)
 
+[Code 1](https://nicoreganono.github.io/cart253/topics/prototypes/P5Project1/js/script.js)
+[Code 2](https://nicoreganono.github.io/cart253/topics/prototypes/P5Project2/js/script.js)
+[Code 3](https://nicoreganono.github.io/cart253/topics/prototypes/P5Project3/js/script.js)
+
 This project's aim was essentially to manipulate shapes in various ways to represent various things. The focus was to understand the different values of different p5.js functions
 
 [Variables prototypes 1](https://nicoreganono.github.io/cart253/topics/prototypes/variables-1)
