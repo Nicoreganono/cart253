@@ -46,10 +46,18 @@ This project's aim was essentially to manipulate shapes in various ways to repre
 [Variables prototypes 2](https://nicoreganono.github.io/cart253/topics/prototypes/variables-2)
 [Variables prototypes 3](https://nicoreganono.github.io/cart253/topics/prototypes/variables-3)
 
+[Code 1](https://nicoreganono.github.io/cart253/topics/prototypes/variables-1/js/script.js)
+[Code 2](https://nicoreganono.github.io/cart253/topics/prototypes/variables-2/js/script.js)
+[Code 3](https://nicoreganono.github.io/cart253/topics/prototypes/variables-3/js/script.js)
+
 This project was made for me to establish various variables into a .js code. The focus was to understand how variables and different established functions can help complexify the code while keeping it organized and flexible.
 
 [Conditionals prototypes 1](https://nicoreganono.github.io/cart253/topics/prototypes/conditionals-1)
 [Conditionals prototypes 2](https://nicoreganono.github.io/cart253/topics/prototypes/conditionals-2)
 [Conditionals prototypes 3](https://nicoreganono.github.io/cart253/topics/prototypes/conditionals-3)
+
+[Code 1](https://nicoreganono.github.io/cart253/topics/prototypes/conditionals-1/js/script.js)
+[Code 2](https://nicoreganono.github.io/cart253/topics/prototypes/conditionals-2/js/script.js)
+[Code 3](https://nicoreganono.github.io/cart253/topics/prototypes/conditionals-3/js/script.js)
 
 For this project, "if" statements were at the center of the assignment. I was to understand how many doors "if" statements open and how much more interesting code can be.
