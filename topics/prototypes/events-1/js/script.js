@@ -1,9 +1,8 @@
 /**
- * Title of Project
- * Author Name
+ * Bird that flaps
+ * Nicola Fournier
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Trying to roughly code flappy bird and see how it functions
  */
 
 "use strict"
