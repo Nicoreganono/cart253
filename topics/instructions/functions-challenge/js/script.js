@@ -1,6 +1,6 @@
 /**
  * Bouncing on that
- * Nicola Fournier, Jeremy, Alice au pays des merveilles
+ * Nicola Fournier, Jeremy, Alice
  * 
  * 2 balls 1 paddle
  */
