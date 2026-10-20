@@ -7,6 +7,7 @@
 
 "use strict"
 //we're making flappy bird (or trying to)
+rectMode(CENTER)
 let bird = {
     x: 120,
     y: 150,
@@ -57,7 +58,12 @@ function draw() {
     bird.velocity.y += 0.5;
     //make the birds height be influenced by said gravity
     bird.y += bird.velocity.y
-
+    let d1a = dist(bird.x, bird.y, pipes1.x, pipes1.y1);
+    let d1b = dist(bird.x, bird.y, pipes1.x, pipes1.y2);
+    let overlapx1a = (d1a < bird.size / 2 + pipes1.l);
+    let overlapx1b = (d1b < bird.size / 2 + pipes1.l);
+    let overlapy1a = (d1a < bird.size / 2 + pipes1.h);
+    let overlapy1b = (d1b < bird.size / 2 + pipes1.h);
     //make the pipes move left
     pipes1.x += -3.5
     pipes2.x += -3.5
@@ -91,6 +97,14 @@ function draw() {
     if (bird.y < 0) {
         bird.y = 0
         bird.velocity.y = 0
+    }
+    if (overlapx1a && overlapy1a) {
+        bird.x = 0
+
+    }
+    if (overlapx1b && overlapy1b) {
+        bird.fill = 0
+
     }
 
 
