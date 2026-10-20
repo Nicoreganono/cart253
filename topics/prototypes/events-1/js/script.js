@@ -7,7 +7,7 @@
 
 "use strict"
 //we're making flappy bird (or trying to)
-rectMode(CENTER)
+
 let bird = {
     x: 120,
     y: 150,
@@ -58,12 +58,6 @@ function draw() {
     bird.velocity.y += 0.5;
     //make the birds height be influenced by said gravity
     bird.y += bird.velocity.y
-    let d1a = dist(bird.x, bird.y, pipes1.x, pipes1.y1);
-    let d1b = dist(bird.x, bird.y, pipes1.x, pipes1.y2);
-    let overlapx1a = (d1a < bird.size / 2 + pipes1.l);
-    let overlapx1b = (d1b < bird.size / 2 + pipes1.l);
-    let overlapy1a = (d1a < bird.size / 2 + pipes1.h);
-    let overlapy1b = (d1b < bird.size / 2 + pipes1.h);
     //make the pipes move left
     pipes1.x += -3.5
     pipes2.x += -3.5
@@ -98,16 +92,31 @@ function draw() {
         bird.y = 0
         bird.velocity.y = 0
     }
-    if (overlapx1a && overlapy1a) {
-        bird.x = 0
+    //code in the most direct way a collision box
+    if (bird.x > pipes1.x && bird.x < pipes1.x + 40 && bird.y > 190) {
+        bird.fill = random(0, 255)
 
     }
-    if (overlapx1b && overlapy1b) {
-        bird.fill = 0
+    if (bird.x > pipes1.x && bird.x < pipes1.x + 40 && bird.y < 100) {
+        bird.fill = random(0, 255)
 
     }
+    if (bird.x > pipes2.x && bird.x < pipes2.x + 40 && bird.y > 220) {
+        bird.fill = random(0, 255)
 
+    }
+    if (bird.x > pipes2.x && bird.x < pipes2.x + 40 && bird.y < 130) {
+        bird.fill = random(0, 255)
 
+    }
+    if (bird.x > pipes3.x && bird.x < pipes3.x + 40 && bird.y > 320) {
+        bird.fill = random(0, 255)
+
+    }
+    if (bird.x > pipes3.x && bird.x < pipes3.x + 40 && bird.y < 230) {
+        bird.fill = random(0, 255)
+
+    }
 
 
     //allow the bird to be
