@@ -76,10 +76,10 @@ function draw() {
     //allow the player to be
     drawPlayer();
     //allow the platforms to move
-    movePlatform(platform1);
-    movePlatform(platform2);
-    movePlatform(platform3);
-    movePlatform(platform4);
+    movePlatformNeg(platform1);
+    movePlatformPos(platform2);
+    movePlatformNeg(platform3);
+    movePlatformPos(platform4);
     //allow the platforms to be
     drawPlatform(platform1);
     drawPlatform(platform2);
@@ -126,24 +126,36 @@ function drawPlatform(platform) {
     rect(platform.x, platform.y, platform.l, platform.h)
     pop();
 }
-//establish the platform's movement
-function movePlatform(platform) {
+//establish the platform's movement if moving positively in X
+function movePlatformPos(platform) {
     //make it actually move
     platform.x += platform.velocity.x
     platform.y += platform.velocity.y
     //make the platform reappear on the other side
-    if (platform.x < 0) {
-        platform.x = 600
-    }
     if (platform.x > 600) {
-        platform.x = 0
+        platform.x = 0 - 100
     }
-
-    if (platform.y < 0) {
+    if (platform.y < 0 - 10) {
         platform.y = 600
     }
     if (platform.y > 600) {
-        platform.y = 0
+        platform.y = 0 - 10
+    }
+}
+//establish the platform's movement if moving negatively in X
+function movePlatformNeg(platform) {
+    //make it actually move
+    platform.x += platform.velocity.x
+    platform.y += platform.velocity.y
+    //make the platform reappear on the other side
+    if (platform.x < 0 - 100) {
+        platform.x = 600
+    }
+    if (platform.y < 0 - 10) {
+        platform.y = 600
+    }
+    if (platform.y > 600) {
+        platform.y = 0 - 10
     }
 }
 //establish a collision function
