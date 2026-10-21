@@ -22,6 +22,8 @@ let player = {
         y: 0.1,
     }
 }
+//make a variable for counting to limit the amount of jumps allowed
+let j = 0
 //make a platform
 let platform1 = {
     x: 600,
@@ -105,7 +107,6 @@ function drawPlayer() {
 function movePlayer() {
     player.y += player.velocity.y;
     player.velocity.y += player.gravity.y;
-    //allow it to move and jump
     if (keyIsDown(LEFT_ARROW)) {
         player.velocity.x = 5
         player.x -= player.velocity.x;
@@ -114,10 +115,13 @@ function movePlayer() {
         player.velocity.x = 5
         player.x += player.velocity.x;
     }
-    if (keyIsDown(UP_ARROW)) {
+    //allow it to jump once after touching a platform
+    if (keyIsDown(UP_ARROW) && j < 1) {
         player.velocity.y = -5
         //this part is to make sure its not stuck on platforms
         player.y -= 15
+        //and this part to make sure it knows it already jumped
+        j += 1
     }
 }
 //establish the platform
@@ -159,6 +163,7 @@ function movePlatformNeg(platform) {
     if (platform.y > 600) {
         platform.y = 0 - 10
     }
+
 }
 //establish a collision function
 function collision(platform) {
@@ -168,6 +173,8 @@ function collision(platform) {
         //make it not move vertically anymore
         player.gravity.y = 0
         player.velocity.y = 0
+        //reset its jump count
+        j = 0
     }
     else {
         //reset it's gravity
