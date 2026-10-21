@@ -38,17 +38,21 @@ function drawPlayer() {
 }
 //establish the controls
 function movePlayer() {
-    if (keyCode === 39) {
-        player.x += 2;
+    if (keyIsDown(LEFT_ARROW)) {
+        player.move.x = 3
+        player.x -= player.move.x;
     }
-    else if (keyCode === 37) {
-        player.x -= 2;
+    if (keyIsDown(RIGHT_ARROW)) {
+        player.move.x = 3
+        player.x += player.move.x;
     }
-    else if (keyCode === 38) {
-        player.y -= 2;
+    if (keyIsDown(DOWN_ARROW)) {
+        player.move.y = 3
+        player.y += player.move.y;
     }
-    else if (keyCode === 40) {
-        player.y += 2;
+    if (keyIsDown(UP_ARROW)) {
+        player.move.y = 3
+        player.y -= player.move.y;
     }
 
 
