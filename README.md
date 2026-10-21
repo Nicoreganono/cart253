@@ -66,10 +66,13 @@ For this project, "if" statements were at the center of the assignment. I was to
 
 [Bird that flaps](https://nicoreganono.github.io/cart253/topics/prototypes/events-1)
 ![](./images/bird-that-flaps.png)
+
 [Hell made of bullets](https://nicoreganono.github.io/cart253/topics/prototypes/events-2)
-![](./images/hell-made-of-bullets.png)
+![](./images/hell-of-bullets.png)
+
 [Jumping individual](https://nicoreganono.github.io/cart253/topics/prototypes/events-3)
-![](./images/jumping-individuals.png)
+![](./images/jumping-individual.png)
+
 [Bird that flaps-Code](https://nicoreganono.github.io/cart253/topics/prototypes/events-1/js/script.js)
 [Hell made of bullets-Code](https://nicoreganono.github.io/cart253/topics/prototypes/events-2/js/script.js)
 [Jumping individual-Code](https://nicoreganono.github.io/cart253/topics/prototypes/events-3/js/script.js)
