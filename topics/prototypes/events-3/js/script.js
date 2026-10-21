@@ -22,7 +22,17 @@ let player = {
         y: 0.1,
     }
 }
-
+//make a platform
+let platform = {
+    x: 600,
+    y: 150,
+    l: 100,
+    h: 10,
+    velocity: {
+        x: -1,
+        y: 0.5,
+    }
+}
 function setup() {
     createCanvas(600, 600);
 }
@@ -33,6 +43,10 @@ function draw() {
     movePlayer();
     //allow the player to be
     drawPlayer();
+    //allow the platforms to move
+    movePlatform(platform);
+    //allow the platforms to be
+    drawPlatform(platform);
 }
 //establish the player
 function drawPlayer() {
@@ -60,4 +74,33 @@ function movePlayer() {
     if (keyIsDown(UP_ARROW)) {
         player.velocity.y = -5
     }
+}
+//establish the platform
+function drawPlatform(platform) {
+    push();
+    stroke("brown")
+    strokeWeight(4)
+    rect(platform.x, platform.y, platform.l, platform.h)
+    pop();
+}
+//establish the platform's movement
+function movePlatform(platform) {
+    //make it actually move
+    platform.x += platform.velocity.x
+    platform.y += platform.velocity.y
+    //make the platform reappear on the other side
+    if (platform.x < 0) {
+        platform.x = 600
+    }
+    if (platform.x > 600) {
+        platform.x = 0
+    }
+
+    if (platform.y < 0) {
+        platform.y = 600
+    }
+    if (platform.y > 600) {
+        platform.y = 0
+    }
+
 }
