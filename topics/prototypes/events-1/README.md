@@ -2,7 +2,7 @@
 
 Nicola Fournier
 
-[View this project online](URL_FOR_THE_RUNNING_PROJECT)
+[View this project online](https://nicoreganono.github.io/cart253/topics/prototypes/events-1)
 
 ## Description
 

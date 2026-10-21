@@ -1,12 +1,12 @@
-# Bird that flaps
+# Hell made of bullets
 
 Nicola Fournier
 
-[View this project online](URL_FOR_THE_RUNNING_PROJECT)
+[View this project online](https://nicoreganono.github.io/cart253/topics/prototypes/events-2)
 
 ## Description
 
-This project is a rough recreation of infamous simple and not so easy game, flappy bird
+This project is a rough conception of undertale-like bullet hell segments
 
 ## Attribution
 
