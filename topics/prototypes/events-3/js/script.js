@@ -47,6 +47,8 @@ function draw() {
     movePlatform(platform);
     //allow the platforms to be
     drawPlatform(platform);
+    //make a collision
+    collision(platform);
 }
 //establish the player
 function drawPlayer() {
@@ -102,5 +104,19 @@ function movePlatform(platform) {
     if (platform.y > 600) {
         platform.y = 0
     }
+}
+//establish a collision function
+function collision(platform) {
+    if (player.x > platform.x && player.x < platform.x + platform.l && player.y < platform.y + 10 && player.y > platform.y - 10) {
+        //make the player stick to the platform
+        player.y = platform.y
+        //make it not move vertically anymore
+        player.gravity.y = 0
+        player.velocity.y = 0
+    }
+    else {
+        //reset it's gravity
+        player.gravity.y = 0.1
 
+    }
 }
