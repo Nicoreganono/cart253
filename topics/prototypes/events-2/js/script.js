@@ -12,7 +12,11 @@ let player = {
     x: 300,
     y: 300,
     size: 30,
-    fill: "red"
+    fill: "red",
+    move: {
+        x: 0,
+        y: 0,
+    }
 }
 
 function setup() {
