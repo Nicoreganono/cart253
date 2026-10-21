@@ -61,3 +61,17 @@ This project was made for me to establish various variables into a .js code. The
 [Code 3](https://nicoreganono.github.io/cart253/topics/prototypes/conditionals-3/js/script.js)
 
 For this project, "if" statements were at the center of the assignment. I was to understand how many doors "if" statements open and how much more interesting code can be.
+
+### Events Prototypes
+
+[Bird that flaps](https://nicoreganono.github.io/cart253/topics/prototypes/events-1)
+![](./images/bird-that-flaps.png)
+[Hell made of bullets](https://nicoreganono.github.io/cart253/topics/prototypes/events-2)
+![](./images/hell-made-of-bullets.png)
+[Jumping individual](https://nicoreganono.github.io/cart253/topics/prototypes/events-3)
+![](./images/jumping-individuals.png)
+[Bird that flaps-Code](https://nicoreganono.github.io/cart253/topics/prototypes/events-1/js/script.js)
+[Hell made of bullets-Code](https://nicoreganono.github.io/cart253/topics/prototypes/events-2/js/script.js)
+[Jumping individual-Code](https://nicoreganono.github.io/cart253/topics/prototypes/events-3/js/script.js)
+
+For this project, different types of events were implemented to add some level of interactivity (most times) to the project. I also implemented elements of the next week's subject to simplify my process.
