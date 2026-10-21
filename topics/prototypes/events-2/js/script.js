@@ -22,10 +22,20 @@ let player = {
 let projectile1 = {
     x: 600,
     y: 150,
-    size: 50,
+    size: 40,
     velocity: {
         x: -10,
         y: 5,
+    }
+}
+//multiply
+let projectile2 = {
+    x: 0,
+    y: 150,
+    size: 50,
+    velocity: {
+        x: 13,
+        y: 2,
     }
 }
 function setup() {
@@ -40,10 +50,13 @@ function draw() {
     drawPlayer();
     //allow the projectile to move
     moveProjectile(projectile1);
+    moveProjectile(projectile2);
     //allow the projectile to be
     drawProjectile(projectile1);
+    drawProjectile(projectile2);
     //make a collision
-    collision(projectile1)
+    collision(projectile1);
+    collision(projectile2);
 }
 //establish the player
 function drawPlayer() {
@@ -58,19 +71,19 @@ function drawPlayer() {
 //establish the controls
 function movePlayer() {
     if (keyIsDown(LEFT_ARROW)) {
-        player.move.x = 3
+        player.move.x = 5
         player.x -= player.move.x;
     }
     if (keyIsDown(RIGHT_ARROW)) {
-        player.move.x = 3
+        player.move.x = 5
         player.x += player.move.x;
     }
     if (keyIsDown(DOWN_ARROW)) {
-        player.move.y = 3
+        player.move.y = 5
         player.y += player.move.y;
     }
     if (keyIsDown(UP_ARROW)) {
-        player.move.y = 3
+        player.move.y = 5
         player.y -= player.move.y;
     }
 }
@@ -78,7 +91,7 @@ function movePlayer() {
 function drawProjectile(projectile) {
     push();
     stroke("pink")
-    strokeWeight(20)
+    strokeWeight(4)
     ellipse(projectile.x, projectile.y, projectile.size)
     pop();
 }
