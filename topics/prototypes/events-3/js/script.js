@@ -23,7 +23,7 @@ let player = {
     }
 }
 //make a platform
-let platform = {
+let platform1 = {
     x: 600,
     y: 150,
     l: 100,
@@ -33,6 +33,38 @@ let platform = {
         y: 0.5,
     }
 }
+//make more
+let platform2 = {
+    x: 0,
+    y: 300,
+    l: 100,
+    h: 10,
+    velocity: {
+        x: 0.5,
+        y: 1,
+    }
+}
+let platform3 = {
+    x: 600,
+    y: 500,
+    l: 100,
+    h: 10,
+    velocity: {
+        x: -0.5,
+        y: -1,
+    }
+}
+let platform4 = {
+    x: 0,
+    y: 100,
+    l: 100,
+    h: 10,
+    velocity: {
+        x: 0.5,
+        y: -0.5,
+    }
+}
+
 function setup() {
     createCanvas(600, 600);
 }
@@ -44,11 +76,20 @@ function draw() {
     //allow the player to be
     drawPlayer();
     //allow the platforms to move
-    movePlatform(platform);
+    movePlatform(platform1);
+    movePlatform(platform2);
+    movePlatform(platform3);
+    movePlatform(platform4);
     //allow the platforms to be
-    drawPlatform(platform);
+    drawPlatform(platform1);
+    drawPlatform(platform2);
+    drawPlatform(platform3);
+    drawPlatform(platform4);
     //make a collision
-    collision(platform);
+    collision(platform1);
+    collision(platform2);
+    collision(platform3);
+    collision(platform4);
 }
 //establish the player
 function drawPlayer() {
