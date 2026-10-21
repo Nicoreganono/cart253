@@ -1,140 +1,55 @@
 /**
- * Bouncing on that
- * Nicola Fournier, Jeremy, Alice au pays des merveilles
+ * Hell made of bullets
+ * Nicola Fournier
  * 
- * 2 balls 1 paddle
+ * Trying to make a undertale-esque type of bullet hell segment
  */
 
-"use strict";
+"use strict"
+//make the player first
 
-// Our first ball
-const ball1 = {
+let player = {
     x: 300,
-    y: 20,
-    width: 10,
-    height: 10,
-    velocity: {
-        x: 0,
-        y: 0,
-    },
-    gravity: {
-        y: 0.1,
-  
-    }
-};
-// Our second heavier ball
-const ball2 = {
-    x: 270,
-    y: 20,
-    width: 10,
-    height: 10,
-    velocity: {
-        x: 0,
-        y: 0,
-    },
-    gravity: {
-        y: 0.15,
-  
-    }
-};
+    y: 300,
+    size: 30,
+    fill: "red"
+}
 
-// Our paddle
-const paddle = {
-    x: undefined,
-    y: 280,
-    width: 80,
-    height: 10
-};
-
-/**
- * Create the canvas
-*/
 function setup() {
-    createCanvas(600, 300);
+    createCanvas(600, 600);
 }
 
-
-/**
- * Move and display the ball and paddle
-*/
 function draw() {
-    background("#87ceeb");
-
-    movePaddle(paddle);
-    //move both balls
-    moveBall(ball1);
-    moveBall(ball2);
-    //bounce both balls
-    handleBounce(ball1, paddle);
-    handleBounce(ball2, paddle);
-
-    drawPaddle(paddle);
-    //draw both balls
-    drawBall(ball1);
-    drawBall(ball2);
+    background(220);
+    //allow the player to move
+    movePlayer();
+    //allow the player to be
+    drawPlayer();
 }
-
-/**
- * Moves the paddle
- */
-function movePaddle(paddle) {
-    //make the paddle's x be the same as the mouse
-    paddle.x=mouseX
-}
-
-/**
- * Moves the ball passed in as a parameter
- */
-function moveBall(ball) {
-  ball.x += ball.velocity.x;
-  ball.y += ball.velocity.y;
-  ball.velocity.y += ball.gravity.y;
-
-}
-
-/**
- * Bounces the provided ball off the provided paddle
- */
-function handleBounce(ball, paddle) {
-if(checkOverlap(ball, paddle) == true){
-ball.velocity.y = -7
-  
-}
-}
-
-/**
- * Draws the specified paddle on the canvas
- */
-function drawPaddle(paddle) {
+//establish the player
+function drawPlayer() {
     push();
-    rectMode(CENTER);
-    noStroke();
-    fill("pink");
-    rect(paddle.x, paddle.y, paddle.width, paddle.height);
+    stroke(255);
+    strokeWeight(5);
+    fill(player.fill)
+    ellipse(player.x, player.y, player.size)
     pop();
-}
 
-/**
- * Draws the specified ball on the canvas
- */
-function drawBall(ball) {
-    push();
-    rectMode(CENTER);
-    noStroke();
-    fill("pink");
-    rect(ball.x, ball.y, ball.width, ball.height);
-    pop();
 }
+//establish the controls
+function movePlayer() {
+    if (keyCode === 39) {
+        player.x += 2;
+    }
+    else if (keyCode === 37) {
+        player.x -= 2;
+    }
+    else if (keyCode === 38) {
+        player.y -= 2;
+    }
+    else if (keyCode === 40) {
+        player.y += 2;
+    }
 
-/**
- * Returns true if rectA and rectB overlap, and false otherwise
- * Assumes rectA and rectB have properties x, y, width and height to describe
- * their rectangles, and that rectA and rectB are displayed CENTERED on their
- * x,y coordinates.
- */
-function checkOverlap(rectA, rectB) {
-  return (rectA.x + rectA.width/2 > rectB.x - rectB.width/2 &&
-          rectA.x - rectA.width/2 < rectB.x + rectB.width/2 &&
-          rectA.y + rectA.height/2 > rectB.y - rectB.height/2 &&
-          rectA.y - rectA.height/2 < rectB.y + rectB.height/2);
+
 }
