@@ -116,6 +116,8 @@ function movePlayer() {
     }
     if (keyIsDown(UP_ARROW)) {
         player.velocity.y = -5
+        //this part is to make sure its not stuck on platforms
+        player.y -= 15
     }
 }
 //establish the platform
