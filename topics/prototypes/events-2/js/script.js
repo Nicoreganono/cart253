@@ -18,7 +18,16 @@ let player = {
         y: 0,
     }
 }
-
+//make a projectile
+let projectile1 = {
+    x: 600,
+    y: 150,
+    size: 50,
+    velocity: {
+        x: -10,
+        y: 5,
+    }
+}
 function setup() {
     createCanvas(600, 600);
 }
@@ -29,6 +38,12 @@ function draw() {
     movePlayer();
     //allow the player to be
     drawPlayer();
+    //allow the projectile to move
+    moveProjectile(projectile1);
+    //allow the projectile to be
+    drawProjectile(projectile1);
+    //make a collision
+    collision(projectile1)
 }
 //establish the player
 function drawPlayer() {
@@ -58,6 +73,39 @@ function movePlayer() {
         player.move.y = 3
         player.y -= player.move.y;
     }
+}
+//establish the projectile
+function drawProjectile(projectile) {
+    push();
+    stroke("pink")
+    strokeWeight(20)
+    ellipse(projectile.x, projectile.y, projectile.size)
+    pop();
+}
+//establish the projectile's behavior
+function moveProjectile(projectile) {
+    projectile.x += projectile.velocity.x
+    projectile.y += projectile.velocity.y
+    if (projectile.x < 0) {
+        projectile.velocity.x = projectile.velocity.x * -1
+    }
+    if (projectile.x > 600) {
+        projectile.velocity.x = projectile.velocity.x * -1
+    }
+    if (projectile.y < 0) {
+        projectile.velocity.y = projectile.velocity.y * -1
+    }
+    if (projectile.y > 600) {
+        projectile.velocity.y = projectile.velocity.y * -1
+    }
 
+}
+//establish a collision function
+function collision(projectile) {
+    let d = dist(projectile.x, projectile.y, player.x, player.y)
+    let overlap = ((d < player.size / 2 + projectile.size / 2))
+    if (overlap) {
+        player.fill = "blue"
+    }
 
 }
