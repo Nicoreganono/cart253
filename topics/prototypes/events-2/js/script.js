@@ -1,157 +1,140 @@
 /**
- * Bird that flaps
- * Nicola Fournier
+ * Bouncing on that
+ * Nicola Fournier, Jeremy, Alice au pays des merveilles
  * 
- * Trying to roughly code flappy bird and see how it functions
+ * 2 balls 1 paddle
  */
 
-"use strict"
-//we're making flappy bird (or trying to)
+"use strict";
 
-let bird = {
-    x: 120,
-    y: 150,
-    size: 30,
-    fill: 100,
-    //make it fly and fall
-    velocity: {
-        y: 0,
-    }
-}
-//make obstacles
-let pipes1 = {
+// Our first ball
+const ball1 = {
     x: 300,
-    y1: -200,
-    y2: 190,
-    l: 40,
-    h: 300,
+    y: 20,
+    width: 10,
+    height: 10,
+    velocity: {
+        x: 0,
+        y: 0,
+    },
+    gravity: {
+        y: 0.1,
+  
+    }
+};
+// Our second heavier ball
+const ball2 = {
+    x: 270,
+    y: 20,
+    width: 10,
+    height: 10,
+    velocity: {
+        x: 0,
+        y: 0,
+    },
+    gravity: {
+        y: 0.15,
+  
+    }
+};
 
-}
-let pipes2 = {
-    x: 600,
-    y1: -170,
-    y2: 220,
-    l: 40,
-    h: 300,
+// Our paddle
+const paddle = {
+    x: undefined,
+    y: 280,
+    width: 80,
+    height: 10
+};
 
-}
-let pipes3 = {
-    x: 1000,
-    y1: -70,
-    y2: 320,
-    l: 40,
-    h: 300,
-
-}
-
-
-
+/**
+ * Create the canvas
+*/
 function setup() {
-    createCanvas(1200, 400);
-
-
+    createCanvas(600, 300);
 }
 
+
+/**
+ * Move and display the ball and paddle
+*/
 function draw() {
-    background(220);
-    //make this simulate gravity
-    bird.velocity.y += 0.5;
-    //make the birds height be influenced by said gravity
-    bird.y += bird.velocity.y
-    //make the pipes move left
-    pipes1.x += -3.5
-    pipes2.x += -3.5
-    pipes3.x += -3.5
-    //make the bird not leave the canvas
-    let birdy = constrain(bird.y, 0, 400)
-    //let there be bird
-    drawBird();
-    //let there be pipes
-    drawPipes1();
-    drawPipes2();
-    drawPipes3();
-    //make the pipes reappear
-    if (pipes1.x < -40) {
-        pipes1.x = 1200
+    background("#87ceeb");
 
-    }
-    if (pipes2.x < -40) {
-        pipes2.x = 1200
+    movePaddle(paddle);
+    //move both balls
+    moveBall(ball1);
+    moveBall(ball2);
+    //bounce both balls
+    handleBounce(ball1, paddle);
+    handleBounce(ball2, paddle);
 
-    }
-    if (pipes3.x < -40) {
-        pipes3.x = 1200
-
-    }
-    //make the constraint function accordingly (the true position of the bird will stay upon the canvas)
-    if (bird.y > 400) {
-        bird.y = 400
-        bird.velocity.y = 0
-    }
-    if (bird.y < 0) {
-        bird.y = 0
-        bird.velocity.y = 0
-    }
-    //code in the most direct way a collision box
-    if (bird.x > pipes1.x && bird.x < pipes1.x + 40 && bird.y > 190) {
-        bird.fill = random(0, 255)
-
-    }
-    if (bird.x > pipes1.x && bird.x < pipes1.x + 40 && bird.y < 100) {
-        bird.fill = random(0, 255)
-
-    }
-    if (bird.x > pipes2.x && bird.x < pipes2.x + 40 && bird.y > 220) {
-        bird.fill = random(0, 255)
-
-    }
-    if (bird.x > pipes2.x && bird.x < pipes2.x + 40 && bird.y < 130) {
-        bird.fill = random(0, 255)
-
-    }
-    if (bird.x > pipes3.x && bird.x < pipes3.x + 40 && bird.y > 320) {
-        bird.fill = random(0, 255)
-
-    }
-    if (bird.x > pipes3.x && bird.x < pipes3.x + 40 && bird.y < 230) {
-        bird.fill = random(0, 255)
-
-    }
-
-
-    //allow the bird to be
-    function drawBird() {
-        push();
-        fill(bird.fill);
-        ellipse(bird.x, birdy, bird.size)
-        pop();
-    }
-    //design the pipes and make it a set of 2
-    function drawPipes1() {
-        push();
-        noStroke();
-        rect(pipes1.x, pipes1.y1, pipes1.l, pipes1.h)
-        rect(pipes1.x, pipes1.y2, pipes1.l, pipes1.h)
-        pop();
-    }
-    //repeat
-    function drawPipes2() {
-        push();
-        noStroke();
-        rect(pipes2.x, pipes2.y1, pipes2.l, pipes2.h)
-        rect(pipes2.x, pipes2.y2, pipes2.l, pipes2.h)
-        pop();
-    }
-    function drawPipes3() {
-        push();
-        noStroke();
-        rect(pipes3.x, pipes3.y1, pipes3.l, pipes3.h)
-        rect(pipes3.x, pipes3.y2, pipes3.l, pipes3.h)
-        pop();
-    }
+    drawPaddle(paddle);
+    //draw both balls
+    drawBall(ball1);
+    drawBall(ball2);
 }
-//make the bird fly higher when the mouse is clicked
-function mouseClicked() {
-    bird.velocity.y = -7
 
+/**
+ * Moves the paddle
+ */
+function movePaddle(paddle) {
+    //make the paddle's x be the same as the mouse
+    paddle.x=mouseX
+}
+
+/**
+ * Moves the ball passed in as a parameter
+ */
+function moveBall(ball) {
+  ball.x += ball.velocity.x;
+  ball.y += ball.velocity.y;
+  ball.velocity.y += ball.gravity.y;
+
+}
+
+/**
+ * Bounces the provided ball off the provided paddle
+ */
+function handleBounce(ball, paddle) {
+if(checkOverlap(ball, paddle) == true){
+ball.velocity.y = -7
+  
+}
+}
+
+/**
+ * Draws the specified paddle on the canvas
+ */
+function drawPaddle(paddle) {
+    push();
+    rectMode(CENTER);
+    noStroke();
+    fill("pink");
+    rect(paddle.x, paddle.y, paddle.width, paddle.height);
+    pop();
+}
+
+/**
+ * Draws the specified ball on the canvas
+ */
+function drawBall(ball) {
+    push();
+    rectMode(CENTER);
+    noStroke();
+    fill("pink");
+    rect(ball.x, ball.y, ball.width, ball.height);
+    pop();
+}
+
+/**
+ * Returns true if rectA and rectB overlap, and false otherwise
+ * Assumes rectA and rectB have properties x, y, width and height to describe
+ * their rectangles, and that rectA and rectB are displayed CENTERED on their
+ * x,y coordinates.
+ */
+function checkOverlap(rectA, rectB) {
+  return (rectA.x + rectA.width/2 > rectB.x - rectB.width/2 &&
+          rectA.x - rectA.width/2 < rectB.x + rectB.width/2 &&
+          rectA.y + rectA.height/2 > rectB.y - rectB.height/2 &&
+          rectA.y - rectA.height/2 < rectB.y + rectB.height/2);
 }
