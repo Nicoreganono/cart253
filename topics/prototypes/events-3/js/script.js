@@ -48,4 +48,16 @@ function drawPlayer() {
 function movePlayer() {
     player.y += player.velocity.y;
     player.velocity.y += player.gravity.y;
+    //allow it to move and jump
+    if (keyIsDown(LEFT_ARROW)) {
+        player.velocity.x = 5
+        player.x -= player.velocity.x;
+    }
+    if (keyIsDown(RIGHT_ARROW)) {
+        player.velocity.x = 5
+        player.x += player.velocity.x;
+    }
+    if (keyIsDown(UP_ARROW)) {
+        player.velocity.y = -5
+    }
 }
