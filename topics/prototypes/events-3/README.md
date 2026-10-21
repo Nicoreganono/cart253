@@ -1,12 +1,12 @@
-# Bird that flaps
+# Jumping individual
 
 Nicola Fournier
 
-[View this project online](URL_FOR_THE_RUNNING_PROJECT)
+[View this project online](https://nicoreganono.github.io/cart253/topics/prototypes/events-3)
 
 ## Description
 
-This project is a rough recreation of infamous simple and not so easy game, flappy bird
+This project is meant to have fun jumping from one platform to another
 
 ## Attribution
 

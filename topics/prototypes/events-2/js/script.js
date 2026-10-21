@@ -99,6 +99,7 @@ function drawProjectile(projectile) {
 function moveProjectile(projectile) {
     projectile.x += projectile.velocity.x
     projectile.y += projectile.velocity.y
+    //make the projectiles bounce on the edges of the screen
     if (projectile.x < 0) {
         projectile.velocity.x = projectile.velocity.x * -1
     }
