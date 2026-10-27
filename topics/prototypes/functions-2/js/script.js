@@ -18,43 +18,36 @@ let paint = {
 let redcolor = {
     x: 50,
     y: 500,
-    s: 20,
     fill: "red",
 }
 let orangecolor = {
     x: 100,
     y: 500,
-    s: 20,
     fill: "orange",
 }
 let yellowcolor = {
     x: 150,
     y: 500,
-    s: 20,
     fill: "yellow",
 }
 let greencolor = {
     x: 200,
     y: 500,
-    s: 20,
     fill: "green",
 }
 let bluecolor = {
     x: 250,
     y: 500,
-    s: 20,
     fill: "blue",
 }
 let pinkcolor = {
     x: 300,
     y: 500,
-    s: 20,
     fill: "pink",
 }
 let blackcolor = {
     x: 350,
     y: 500,
-    s: 20,
     fill: "black",
 }
 
