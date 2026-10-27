@@ -148,71 +148,36 @@ function draw() {
     //make the orb happen
     drawOrb(orb1x, orb1y, orb1.fill);
     //make the string happen
-    drawString1();
+    drawString(orb1x, orb1y, orb1.fill);
     //do it all again
     drawOrb(orb2x, orb2y, orb2.fill);
-    drawString2();
+    drawString(orb2x, orb2y, orb2.fill);
     drawOrb(orb3x, orb3y, orb3.fill);
-    drawString3();
+    drawString(orb3x, orb3y, orb3.fill);
     drawOrb(orb4x, orb4y, orb4.fill);
-    drawString4();
+    drawString(orb4x, orb4y, orb4.fill);
     drawOrb(orb5x, orb5y, orb5.fill);
-    drawString5();
+    drawString(orb5x, orb5y, orb5.fill);
     drawOrb(orb6x, orb6y, orb6.fill);
-    drawString6();
+    drawString(orb6x, orb6y, orb6.fill);
     drawOrb(orb7x, orb7y, orb7.fill);
-    drawString7();
+    drawString(orb7x, orb7y, orb7.fill);
     //make ONE function using parameters to reduce the sheer amount of functions to make
-    function drawOrb(orbX, orbY, orbFill) {
+    function drawOrb(x, y, orbFill) {
         push();
         noStroke();
         fill(orbFill);
-        ellipse(orbX, orbY, 20)
+        ellipse(x, y, 20)
         pop();
     }
 
-    function drawString1() {
+    function drawString(x, y, orbFill) {
         push();
         //the string is the same color as the ball
-        stroke(orb1.fill);
+        stroke(orbFill);
         //the string is between the mouse and the ball
-        line(orb1x, orb1y, mouseX, mouseY);
+        line(x, y, mouseX, mouseY);
         pop();
     }
-    function drawString2() {
-        push();
-        stroke(orb2.fill);
-        line(orb2x, orb2y, mouseX, mouseY);
-        pop();
-    }
-    function drawString3() {
-        push();
-        stroke(orb3.fill);
-        line(orb3x, orb3y, mouseX, mouseY);
-        pop();
-    }
-    function drawString4() {
-        push();
-        stroke(orb4.fill);
-        line(orb4x, orb4y, mouseX, mouseY);
-        pop();
-    }
-    function drawString5() {
-        push();
-        stroke(orb5.fill);
-        line(orb5x, orb5y, mouseX, mouseY);
-        pop();
-    }
-    function drawString6() {
-        push();
-        stroke(orb6.fill);
-        line(orb6x, orb6y, mouseX, mouseY);
-        pop();
-    }
-    function drawString7() {
-        push();
-        stroke(orb7.fill);
-        line(orb7x, orb7y, mouseX, mouseY);
-        pop();
-    }
+
 }
