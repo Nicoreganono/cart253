@@ -146,38 +146,115 @@ function draw() {
 
 
     //make the orb happen
-    drawOrb(orb1x, orb1y, orb1.fill);
+    drawOrb1();
     //make the string happen
-    drawString(orb1x, orb1y, orb1.fill);
+    drawString1();
     //do it all again
-    drawOrb(orb2x, orb2y, orb2.fill);
-    drawString(orb2x, orb2y, orb2.fill);
-    drawOrb(orb3x, orb3y, orb3.fill);
-    drawString(orb3x, orb3y, orb3.fill);
-    drawOrb(orb4x, orb4y, orb4.fill);
-    drawString(orb4x, orb4y, orb4.fill);
-    drawOrb(orb5x, orb5y, orb5.fill);
-    drawString(orb5x, orb5y, orb5.fill);
-    drawOrb(orb6x, orb6y, orb6.fill);
-    drawString(orb6x, orb6y, orb6.fill);
-    drawOrb(orb7x, orb7y, orb7.fill);
-    drawString(orb7x, orb7y, orb7.fill);
-    //make ONE function using parameters to reduce the sheer amount of functions to make
-    function drawOrb(x, y, orbFill) {
+    drawOrb2();
+    drawString2();
+    drawOrb3();
+    drawString3();
+    drawOrb4();
+    drawString4();
+    drawOrb5();
+    drawString5();
+    drawOrb6();
+    drawString6();
+    drawOrb7();
+    drawString7();
+
+    function drawOrb1() {
         push();
         noStroke();
-        fill(orbFill);
-        ellipse(x, y, 20)
+        fill(orb1.fill);
+        ellipse(orb1x, orb1y, orb1.size)
+        pop();
+    }
+    function drawOrb2() {
+        push();
+        noStroke();
+        fill(orb2.fill);
+        ellipse(orb2x, orb2y, orb2.size)
+        pop();
+    }
+    function drawOrb3() {
+        push();
+        noStroke();
+        fill(orb3.fill);
+        ellipse(orb3x, orb3y, orb3.size)
+        pop();
+    }
+    function drawOrb4() {
+        push();
+        noStroke();
+        fill(orb4.fill);
+        ellipse(orb4x, orb4y, orb4.size)
+        pop();
+    }
+    function drawOrb5() {
+        push();
+        noStroke();
+        fill(orb5.fill);
+        ellipse(orb5x, orb5y, orb5.size)
+        pop();
+    }
+    function drawOrb6() {
+        push();
+        noStroke();
+        fill(orb6.fill);
+        ellipse(orb6x, orb6y, orb6.size)
+        pop();
+    }
+    function drawOrb7() {
+        push();
+        noStroke();
+        fill(orb7.fill);
+        ellipse(orb7x, orb7y, orb7.size)
         pop();
     }
 
-    function drawString(x, y, orbFill) {
+    function drawString1() {
         push();
         //the string is the same color as the ball
-        stroke(orbFill);
+        stroke(orb1.fill);
         //the string is between the mouse and the ball
-        line(x, y, mouseX, mouseY);
+        line(orb1x, orb1y, mouseX, mouseY);
         pop();
     }
-
+    function drawString2() {
+        push();
+        stroke(orb2.fill);
+        line(orb2x, orb2y, mouseX, mouseY);
+        pop();
+    }
+    function drawString3() {
+        push();
+        stroke(orb3.fill);
+        line(orb3x, orb3y, mouseX, mouseY);
+        pop();
+    }
+    function drawString4() {
+        push();
+        stroke(orb4.fill);
+        line(orb4x, orb4y, mouseX, mouseY);
+        pop();
+    }
+    function drawString5() {
+        push();
+        stroke(orb5.fill);
+        line(orb5x, orb5y, mouseX, mouseY);
+        pop();
+    }
+    function drawString6() {
+        push();
+        stroke(orb6.fill);
+        line(orb6x, orb6y, mouseX, mouseY);
+        pop();
+    }
+    function drawString7() {
+        push();
+        stroke(orb7.fill);
+        line(orb7x, orb7y, mouseX, mouseY);
+        pop();
+    }
 }
