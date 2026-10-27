@@ -18,43 +18,36 @@ let paint = {
 let redcolor = {
     x: 50,
     y: 500,
-    s: 20,
     fill: "red",
 }
 let orangecolor = {
     x: 100,
     y: 500,
-    s: 20,
     fill: "orange",
 }
 let yellowcolor = {
     x: 150,
     y: 500,
-    s: 20,
     fill: "yellow",
 }
 let greencolor = {
     x: 200,
     y: 500,
-    s: 20,
     fill: "green",
 }
 let bluecolor = {
     x: 250,
     y: 500,
-    s: 20,
     fill: "blue",
 }
 let pinkcolor = {
     x: 300,
     y: 500,
-    s: 20,
     fill: "pink",
 }
 let blackcolor = {
     x: 350,
     y: 500,
-    s: 20,
     fill: "black",
 }
 
@@ -109,75 +102,28 @@ function draw() {
     if (overlapblack) {
         paint.fill = blackcolor.fill
     }
-    drawRed();
-    drawOrange();
-    drawYellow();
-    drawGreen();
-    drawBlue();
-    drawPink();
-    drawBlack();
+    drawColor(redcolor);
+    drawColor(orangecolor);
+    drawColor(yellowcolor);
+    drawColor(greencolor);
+    drawColor(bluecolor);
+    drawColor(pinkcolor);
+    drawColor(blackcolor);
     //only paint when the mouse is pressed
     if (mouseIsPressed) {
         drawPaint();
     }
 }
 
-function drawRed() {
+function drawColor(colour) {
     push();
     stroke("black")
     strokeWeight(3)
-    fill(redcolor.fill);
-    ellipse(redcolor.x, redcolor.y, redcolor.s);
+    fill(colour.fill);
+    ellipse(colour.x, 500, 20);
     pop();
 }
-function drawOrange() {
-    push();
-    stroke("black")
-    strokeWeight(3)
-    fill(orangecolor.fill);
-    ellipse(orangecolor.x, orangecolor.y, orangecolor.s);
-    pop();
-}
-function drawYellow() {
-    push();
-    stroke("black")
-    strokeWeight(3)
-    fill(yellowcolor.fill);
-    ellipse(yellowcolor.x, yellowcolor.y, yellowcolor.s);
-    pop();
-}
-function drawGreen() {
-    push();
-    stroke("black")
-    strokeWeight(3)
-    fill(greencolor.fill);
-    ellipse(greencolor.x, greencolor.y, greencolor.s);
-    pop();
-}
-function drawBlue() {
-    push();
-    stroke("black")
-    strokeWeight(3)
-    fill(bluecolor.fill)
-    ellipse(bluecolor.x, bluecolor.y, bluecolor.s)
-    pop();
-}
-function drawPink() {
-    push();
-    stroke("black")
-    strokeWeight(3)
-    fill(pinkcolor.fill)
-    ellipse(pinkcolor.x, pinkcolor.y, pinkcolor.s)
-    pop();
-}
-function drawBlack() {
-    push();
-    stroke("black")
-    strokeWeight(3)
-    fill(blackcolor.fill)
-    ellipse(blackcolor.x, blackcolor.y, blackcolor.s)
-    pop();
-}
+
 function drawPaint() {
     stroke(paint.fill)
     strokeWeight(10)
