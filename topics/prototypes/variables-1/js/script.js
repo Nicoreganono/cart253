@@ -146,70 +146,28 @@ function draw() {
 
 
     //make the orb happen
-    drawOrb1();
+    drawOrb(orb1x, orb1y, orb1.fill);
     //make the string happen
     drawString1();
     //do it all again
-    drawOrb2();
+    drawOrb(orb2x, orb2y, orb2.fill);
     drawString2();
-    drawOrb3();
+    drawOrb(orb3x, orb3y, orb3.fill);
     drawString3();
-    drawOrb4();
+    drawOrb(orb4x, orb4y, orb4.fill);
     drawString4();
-    drawOrb5();
+    drawOrb(orb5x, orb5y, orb5.fill);
     drawString5();
-    drawOrb6();
+    drawOrb(orb6x, orb6y, orb6.fill);
     drawString6();
-    drawOrb7();
+    drawOrb(orb7x, orb7y, orb7.fill);
     drawString7();
-
-    function drawOrb1() {
+    //make ONE function using parameters to reduce the sheer amount of functions to make
+    function drawOrb(orbX, orbY, orbFill) {
         push();
         noStroke();
-        fill(orb1.fill);
-        ellipse(orb1x, orb1y, orb1.size)
-        pop();
-    }
-    function drawOrb2() {
-        push();
-        noStroke();
-        fill(orb2.fill);
-        ellipse(orb2x, orb2y, orb2.size)
-        pop();
-    }
-    function drawOrb3() {
-        push();
-        noStroke();
-        fill(orb3.fill);
-        ellipse(orb3x, orb3y, orb3.size)
-        pop();
-    }
-    function drawOrb4() {
-        push();
-        noStroke();
-        fill(orb4.fill);
-        ellipse(orb4x, orb4y, orb4.size)
-        pop();
-    }
-    function drawOrb5() {
-        push();
-        noStroke();
-        fill(orb5.fill);
-        ellipse(orb5x, orb5y, orb5.size)
-        pop();
-    }
-    function drawOrb6() {
-        push();
-        noStroke();
-        fill(orb6.fill);
-        ellipse(orb6x, orb6y, orb6.size)
-        pop();
-    }
-    function drawOrb7() {
-        push();
-        noStroke();
-        fill(orb7.fill);
-        ellipse(orb7x, orb7y, orb7.size)
+        fill(orbFill);
+        ellipse(orbX, orbY, 20)
         pop();
     }
 
