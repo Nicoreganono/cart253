@@ -1,8 +1,8 @@
 /**
- * Boingo
- * Pippin Barr
+ * Microbes
+ * Nicola Fournier
  *
- * A ball that bounces around on the canvas
+ * Bacteria travel accross your screen the more you touch it
  */
 
 let balls = []; // Will create it with createBall()
@@ -13,8 +13,6 @@ let balls = []; // Will create it with createBall()
 function setup() {
     // Create the canvas
     createCanvas(400, 400);
-    // Create the ball
-    ball1 = createBall();
 }
 
 /**
@@ -44,9 +42,12 @@ function createBall() {
 function draw() {
     background("#87ceeb");
 
-    moveBall(ball1);
-    bounceBall(ball1);
-    drawBall(ball1);
+    for (let ball of balls) {
+        moveBall(ball);
+        bounceBall(ball);
+        drawBall(ball);
+    }
+
 }
 
 /**
@@ -85,4 +86,8 @@ function drawBall(ball) {
     fill(ball.fill);
     ellipse(ball.x, ball.y, ball.size);
     pop();
+}
+function mousePressed() {
+    ball = createBall();
+    balls.push(ball);
 }
