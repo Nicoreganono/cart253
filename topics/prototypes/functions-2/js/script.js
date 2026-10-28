@@ -15,48 +15,76 @@ let paint = {
     fill: "black",
 }
 //make different colors of paint
-let redcolor = {
+let color1 = {
     x: 50,
     y: 500,
     fill: "red",
 }
-let orangecolor = {
+let color2 = {
     x: 100,
     y: 500,
     fill: "orange",
 }
-let yellowcolor = {
+let color3 = {
     x: 150,
     y: 500,
     fill: "yellow",
 }
-let greencolor = {
+let color4 = {
     x: 200,
     y: 500,
     fill: "green",
 }
-let bluecolor = {
+let color5 = {
     x: 250,
     y: 500,
     fill: "blue",
 }
-let pinkcolor = {
+let color6 = {
     x: 300,
     y: 500,
-    fill: "pink",
+    fill: "#ff007f",
 }
-let blackcolor = {
+let color7 = {
     x: 350,
     y: 500,
     fill: "black",
 }
-
+let color8 = {
+    x: 75,
+    y: 570,
+    fill: "#E34234",
+}
+let color9 = {
+    x: 125,
+    y: 570,
+    fill: "gold",
+}
+let color10 = {
+    x: 175,
+    y: 570,
+    fill: "limegreen",
+}
+let color11 = {
+    x: 225,
+    y: 570,
+    fill: "teal",
+}
+let color12 = {
+    x: 275,
+    y: 570,
+    fill: "purple",
+}
+let color13 = {
+    x: 325,
+    y: 570,
+    fill: "pink",
+}
 
 function setup() {
     createCanvas(400, 600);
     //make the background happen once
     background(220);
-
 }
 
 function draw() {
@@ -65,30 +93,34 @@ function draw() {
     paint.y1 = pmouseY;
     paint.x2 = mouseX;
     paint.y2 = mouseY;
-    //establish distances for the different paint colors
-    let dr = createDist(redcolor);
-    let dor = createDist(orangecolor);
-    let dy = createDist(yellowcolor);
-    let dg = createDist(greencolor);
-    let db = createDist(bluecolor);
-    let dp = createDist(pinkcolor);
-    let dbla = createDist(blackcolor);
     //turn the colors into color pickers
-    overlap(dr, redcolor);
-    overlap(dor, orangecolor);
-    overlap(dy, yellowcolor);
-    overlap(dg, greencolor);
-    overlap(db, bluecolor);
-    overlap(dp, pinkcolor);
-    overlap(dbla, blackcolor);
+    overlap(color1);
+    overlap(color2);
+    overlap(color3);
+    overlap(color4);
+    overlap(color5);
+    overlap(color6);
+    overlap(color7);
+    overlap(color8);
+    overlap(color9);
+    overlap(color10);
+    overlap(color11);
+    overlap(color12);
+    overlap(color13);
     //make the color pickers appear with parameters
-    drawColor(redcolor);
-    drawColor(orangecolor);
-    drawColor(yellowcolor);
-    drawColor(greencolor);
-    drawColor(bluecolor);
-    drawColor(pinkcolor);
-    drawColor(blackcolor);
+    drawColor(color1);
+    drawColor(color2);
+    drawColor(color3);
+    drawColor(color4);
+    drawColor(color5);
+    drawColor(color6);
+    drawColor(color7);
+    drawColor(color8);
+    drawColor(color9);
+    drawColor(color10);
+    drawColor(color11);
+    drawColor(color12);
+    drawColor(color13);
     //only paint when the mouse is pressed
     if (mouseIsPressed) {
         drawPaint();
@@ -100,7 +132,7 @@ function drawColor(colour) {
     stroke("black")
     strokeWeight(3)
     fill(colour.fill);
-    ellipse(colour.x, 500, 20);
+    ellipse(colour.x, colour.y, 20);
     pop();
 }
 //make the stroke of pain appear
@@ -108,14 +140,11 @@ function drawPaint() {
     stroke(paint.fill)
     strokeWeight(10)
     line(paint.x1, paint.y1, paint.x2, paint.y2);
-
-}
-//make different dist values by returning them
-function createDist(colour) {
-    return dist(paint.x2, paint.y2, colour.x, colour.y)
 }
 //make an overlap function with parameters
-function overlap(d, colour) {
+function overlap(colour) {
+    //establish distances for the different paint colors
+    let d = dist(paint.x2, paint.y2, colour.x, colour.y)
     if (d < 20 / 2) {
         paint.fill = colour.fill
     }
