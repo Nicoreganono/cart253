@@ -18,7 +18,6 @@ let shark = {
         y: 0,
     },
     fill: "#0a1432"
-
 }
 //this is where YOU come in >:) 
 let bait = {
@@ -26,15 +25,12 @@ let bait = {
     y: undefined,
     s: 20,
     fill: "#b08799",
-
-
 }
 // Starting and end texts.
 let titleString = "Fish food - press e to start";
 let endingString = "Enjoy the bowels of a deep sea creature...";
 //with an option to restart
 let endingString2 = "press r to restart";
-
 //start the sequence with the title
 let state = "title";
 
@@ -46,9 +42,6 @@ function setup() {
 }
 
 function draw() {
-    //establish the bait positional values
-    bait.x = mouseX;
-    bait.y = mouseY;
 
     if (state === "title") {
         title();
@@ -76,32 +69,14 @@ function title() {
 }
 function devouring() {
     background("skyblue");
-    //establish the distance between the shark and the bait for overlap
-    let d = dist(bait.x, bait.y, shark.x, shark.y);
-    //establish a distance value to see if the mouse is moving
-    let d2 = dist(mouseX, mouseY, pmouseX, pmouseY);
-    //make it follow the cursor harder when the cursor is immobile
-    if (d2 === 0) {
-        shark.velocity.x += (mouseX - shark.x) / random(30, 50)
-        shark.velocity.y += (mouseY - shark.y) / random(30, 50)
-    } else {
-        //make the shark follow the cursor fairly rapidly
-        shark.velocity.x += (mouseX - shark.x) / 140
-        shark.velocity.y += (mouseY - shark.y) / 140
-
-    }
-    //establish both overlap values
-    let overlapx = (d < bait.s / 2 + shark.sx);
-    let overlapy = (d < bait.s / 2 + shark.sy / 2);
-    shark.x += shark.velocity.x
-    shark.y += shark.velocity.y
-    //make the shark appear
-    drawShark();
+    //make the bait appear and make it move
+    moveBait();
     drawBait();
-    //when the bait is eaten, life comes to an end
-    if (overlapx && overlapy) {
-        state = "ending";
-    }
+    //make the shark appear and make it move
+    moveShark(shark);
+    drawShark(shark);
+    //make the bait mortal
+    devoured(shark);
 }
 function ending() {
     background("#610000");
@@ -112,7 +87,6 @@ function ending() {
     textSize(16)
     text(endingString2, width / 2, (height / 2) + 50)
     pop();
-
     //add an option to restart easily
     if (keyIsPressed === true) {
         if (key === 'r') {
@@ -120,8 +94,8 @@ function ending() {
         }
     }
 }
-//make the predator appear
-function drawShark() {
+//make a function with parameters that draw the shark
+function drawShark(shark) {
     fill(shark.fill)
     ellipse(shark.x, shark.y, shark.sx, shark.sy)
 }
@@ -129,5 +103,55 @@ function drawShark() {
 function drawBait() {
     fill(bait.fill);
     ellipse(bait.x, bait.y, bait.s);
-
+}
+//make the victim move
+function moveBait() {
+    //establish the bait positional values
+    bait.x = mouseX;
+    bait.y = mouseY;
+}
+//establish a function that determines the behaviour of the shark with parameters
+function moveShark(shark) {
+    shark.x += shark.velocity.x
+    shark.y += shark.velocity.y
+    //establish a distance value to see if the mouse is moving
+    let d2 = dist(mouseX, mouseY, pmouseX, pmouseY);
+    //make it follow the cursor harder when the cursor is immobile
+    if (d2 === 0) {
+        shark.velocity.x += (mouseX - shark.x) / random(30, 50)
+        shark.velocity.y += (mouseY - shark.y) / random(30, 50)
+    } else {
+        //make the shark follow the cursor fairly rapidly
+        shark.velocity.x += (mouseX - shark.x) / 140
+        shark.velocity.y += (mouseY - shark.y) / 140
+    }
+    //constrain the shark to the canvas
+    if (shark.x > width) {
+        shark.x = width - 1
+        shark.velocity.x = shark.velocity.x * -0.3
+    }
+    if (shark.x < 0) {
+        shark.x = 1
+        shark.velocity.x = shark.velocity.x * -0.3
+    }
+    if (shark.y > height) {
+        shark.y = height - 1
+        shark.velocity.y = shark.velocity.y * -0.3
+    }
+    if (shark.y < 0) {
+        shark.y = 1
+        shark.velocity.y = shark.velocity.y * -0.3
+    }
+}
+//establish a function with parameters that determine overlap
+function devoured(shark) {
+    //establish the distance between the shark and the bait for overlap
+    let d = dist(bait.x, bait.y, shark.x, shark.y);
+    //establish both overlap values
+    let overlapx = (d < bait.s / 2 + shark.sx);
+    let overlapy = (d < bait.s / 2 + shark.sy / 2);
+    //when the bait is eaten, life comes to an end
+    if (overlapx && overlapy) {
+        state = "ending";
+    }
 }
