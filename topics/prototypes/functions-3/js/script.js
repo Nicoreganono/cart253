@@ -7,17 +7,44 @@
 
 "use strict";
 //establish a dangerous (more stereotypically than normal) underwater predator
-let shark = {
+let shark1 = {
     x: 700,
     y: 360,
     sx: 80,
     sy: 40,
+    a: 360,
     //make it's speed variable
     velocity: {
         x: 0,
         y: 0,
     },
-    fill: "#0a1432"
+    fill: "#353e5a"
+}
+let shark2 = {
+    x: 700,
+    y: 260,
+    sx: 60,
+    sy: 30,
+    a: 300,
+    //make it's speed variable
+    velocity: {
+        x: 0,
+        y: 0,
+    },
+    fill: "#243569"
+}
+let shark3 = {
+    x: 700,
+    y: 110,
+    sx: 100,
+    sy: 50,
+    a: 500,
+    //make it's speed variable
+    velocity: {
+        x: 0,
+        y: 0,
+    },
+    fill: "#6479b8"
 }
 //this is where YOU come in >:) 
 let bait = {
@@ -72,11 +99,18 @@ function devouring() {
     //make the bait appear and make it move
     moveBait();
     drawBait();
-    //make the shark appear and make it move
-    moveShark(shark);
-    drawShark(shark);
+    //make the shark move
+    moveShark(shark1);
+    moveShark(shark2);
+    moveShark(shark3);
+    //make the shark appear
+    drawShark(shark1);
+    drawShark(shark2);
+    drawShark(shark3);
     //make the bait mortal
-    devoured(shark);
+    devoured(shark1);
+    devoured(shark2);
+    devoured(shark3);
 }
 function ending() {
     background("#610000");
@@ -118,12 +152,12 @@ function moveShark(shark) {
     let d2 = dist(mouseX, mouseY, pmouseX, pmouseY);
     //make it follow the cursor harder when the cursor is immobile
     if (d2 === 0) {
-        shark.velocity.x += (mouseX - shark.x) / random(30, 50)
-        shark.velocity.y += (mouseY - shark.y) / random(30, 50)
+        shark.velocity.x += (mouseX - shark.x) / random(80, 150)
+        shark.velocity.y += (mouseY - shark.y) / random(80, 150)
     } else {
         //make the shark follow the cursor fairly rapidly
-        shark.velocity.x += (mouseX - shark.x) / 140
-        shark.velocity.y += (mouseY - shark.y) / 140
+        shark.velocity.x += (mouseX - shark.x) / shark.a
+        shark.velocity.y += (mouseY - shark.y) / shark.a
     }
     //constrain the shark to the canvas
     if (shark.x > width) {
