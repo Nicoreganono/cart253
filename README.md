@@ -78,3 +78,20 @@ For this project, "if" statements were at the center of the assignment. I was to
 [Jumping individual-Code](https://nicoreganono.github.io/cart253/topics/prototypes/events-3/js/script.js)
 
 For this project, different types of events were implemented to add some level of interactivity (most times) to the project. I also implemented elements of the next week's subject to simplify my process.
+
+### Functions Prototypes
+
+[Bouncy yo-yos](https://nicoreganono.github.io/cart253/topics/prototypes/functions-1)
+![](./images/bird-that-flaps.png)
+
+[Canvas of your soul](https://nicoreganono.github.io/cart253/topics/prototypes/functions-2)
+![](./images/hell-of-bullets.png)
+
+[Shark Trio](https://nicoreganono.github.io/cart253/topics/prototypes/functions-3)
+![](./images/jumping-individual.png)
+
+[Bouncy yo-yos-Code](https://nicoreganono.github.io/cart253/topics/prototypes/functions-1/js/script.js)
+[Canvas of your soul-Code](https://nicoreganono.github.io/cart253/topics/prototypes/functions-2/js/script.js)
+[Shark Trio-Code](https://nicoreganono.github.io/cart253/topics/prototypes/functions-3/js/script.js)
+
+I reused code from previous projects and implemented parameters within them to make them more organized and also to allow easier multiplication of certain assets. This makes coding a much easier task, frankly.
