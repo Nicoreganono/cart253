@@ -82,13 +82,13 @@ For this project, different types of events were implemented to add some level o
 ### Functions Prototypes
 
 [Bouncy yo-yos](https://nicoreganono.github.io/cart253/topics/prototypes/functions-1)
-![](./images/bird-that-flaps.png)
+![](./images/bouncy-yo-yos.jpg)
 
 [Canvas of your soul](https://nicoreganono.github.io/cart253/topics/prototypes/functions-2)
-![](./images/hell-of-bullets.png)
+![](./images/canvas-of-your-soul.png)
 
 [Shark Trio](https://nicoreganono.github.io/cart253/topics/prototypes/functions-3)
-![](./images/jumping-individual.png)
+![](./images/shark-trio.png)
 
 [Bouncy yo-yos-Code](https://nicoreganono.github.io/cart253/topics/prototypes/functions-1/js/script.js)
 [Canvas of your soul-Code](https://nicoreganono.github.io/cart253/topics/prototypes/functions-2/js/script.js)
