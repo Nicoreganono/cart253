@@ -1,16 +1,18 @@
-# Canvas of your heart
+# Canvas of your soul
 
-Nico
+Nicola Fournier
 
-[View this project online](https://nicoreganono.github.io/cart253/topics/prototypes/conditionals-2/)
+[View this project online](https://nicoreganono.github.io/cart253/topics/prototypes/functions-2/)
 
 ## Description
 
-An empty canvas beckons your soul to release itself upon the page.
+An empty canvas beckons your soul to release itself upon the page. Luckily this time, more colors are available to your liking.
+A recreation of my Canvas of the heart prototype using parameters to make it better.
 
 ## Attribution
 
 > - This project uses [p5.js](https://p5js.org).
+> - Using code from [Canvas of your heart](https://nicoreganono.github.io/cart253/topics/prototypes/conditionals-2/), made by me.
 
 ## License
 

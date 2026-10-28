@@ -1,8 +1,9 @@
 /**
- * Sticky Orbs
+ * Bouncy yo-yos
  * Nicola Fournier
  * 
- * A collection of small orbs orbiting the cursor, sticking and bouncing off the walls wildly.
+ * A collection of small orbs orbiting the cursor, bouncing off the walls wildly.
+ * A recreation of my Sticky orbs prototype using parameters to make it better.
  */
 
 "use strict";

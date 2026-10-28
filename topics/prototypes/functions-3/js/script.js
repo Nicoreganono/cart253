@@ -1,15 +1,16 @@
 /**
- * Do not get eaten
- * Nico
+ * Shark trio
+ * Nicola Fournier
  * 
- * The shark is coming for you, and he's very hungry.
+ * There are more sharks, and they want you for dinner
+ * these is a recreation of a previous code of mine using parameters to make it better
  */
 
 "use strict";
 //establish a dangerous (more stereotypically than normal) underwater predator
 let shark1 = {
-    x: 700,
-    y: 360,
+    x: 1000 * 0.9,
+    y: 600 * 0.25,
     sx: 80,
     sy: 40,
     a: 360,
@@ -20,9 +21,10 @@ let shark1 = {
     },
     fill: "#353e5a"
 }
+//make a few more
 let shark2 = {
-    x: 700,
-    y: 260,
+    x: 1000 * 0.9,
+    y: 600 * 0.5,
     sx: 60,
     sy: 30,
     a: 300,
@@ -34,8 +36,8 @@ let shark2 = {
     fill: "#243569"
 }
 let shark3 = {
-    x: 700,
-    y: 110,
+    x: 1000 * 0.9,
+    y: 600 * 0.75,
     sx: 100,
     sy: 50,
     a: 500,
@@ -62,7 +64,7 @@ let endingString2 = "press r to restart";
 let state = "title";
 
 function setup() {
-    createCanvas(800, 400);
+    createCanvas(1000, 600);
     //make the text centered and big
     textSize(32);
     textAlign(CENTER, CENTER);
@@ -130,8 +132,10 @@ function ending() {
 }
 //make a function with parameters that draw the shark
 function drawShark(shark) {
+    push();
     fill(shark.fill)
     ellipse(shark.x, shark.y, shark.sx, shark.sy)
+    pop();
 }
 //make the victim appear
 function drawBait() {

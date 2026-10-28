@@ -1,8 +1,9 @@
 /**
- * Canvas of your heart
+ * Canvas of your soul
  * Nico
  * 
- * An empty canvas beckons your attention. Let your soul splatter itself.
+ * A canvas offers you a plethora of colors with which to express yourself
+ * and obious recreation of my Canvas of your heart code using parameters
  */
 
 "use strict";
