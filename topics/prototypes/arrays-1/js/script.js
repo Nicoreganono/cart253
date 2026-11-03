@@ -11,7 +11,7 @@ let smokes=[];
 
 let rocket={
     x:200,
-    y:650,
+    y:550,
     fill:100,
     size:70,
     velocity:{
@@ -22,7 +22,7 @@ let rocket={
 
 }
 function setup(){
-    createCanvas(400,800);
+    createCanvas(400,600);
 }
 
 function createSmoke(){
@@ -33,7 +33,7 @@ function createSmoke(){
         fill: 255,
         velocity:{
             x: random(-0.8,0.8),
-            y: 10,
+            y: 15,
         }
     };
 return newSmoke;
@@ -62,12 +62,15 @@ function moveSmoke(smoke){
     smoke.y += smoke.velocity.y
     smoke.velocity.y *= 0.98
     smoke.size += smoke.velocity.y/10
+    const d = dist(smoke.x,smoke.y,rocket.x,rocket.y)
+    smoke.fill = map(d, 0, 600, 100, 0, true)
 }
 
 function drawSmoke(smoke){
     push();
     noStroke();
-    fill(smoke.fill);
+    colorMode(HSB);
+    fill(200,smoke.fill,100);
     ellipse(smoke.x,smoke.y,smoke.size)
     pop();
 }
@@ -89,6 +92,23 @@ function moveRocket(){
     }
     if (keyIsDown(DOWN_ARROW)) {
         rocket.velocity.y += 0.2
+    }
+    
+    if (rocket.x >= width) {
+        rocket.velocity.x = 0;
+        rocket.x = width-1;
+    }
+    if (rocket.x <= 0) {
+        rocket.velocity.x = 0;
+        rocket.x = 1;
+    }
+    if (rocket.y > height) {
+        rocket.velocity.y = 0;
+        rocket.y = height-1
+    }
+    if (rocket.y < 0) {
+        rocket.velocity.y = 0;
+        rocket.y = 1;
     }
 }
 
