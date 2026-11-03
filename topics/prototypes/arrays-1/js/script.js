@@ -10,12 +10,13 @@
 let smokes=[];
 
 let rocket={
-    x:undefined,
-    y:undefined,
+    x:200,
+    y:650,
     fill:100,
-    size:{
-        x:30,
-        y:50,
+    size:70,
+    velocity:{
+        x:0,
+        y:0,
     }
 
 
@@ -26,8 +27,8 @@ function setup(){
 
 function createSmoke(){
     const newSmoke={
-        x:200,
-        y:400,
+        x:rocket.x,
+        y:rocket.y,
         size: 30,
         fill: 255,
         velocity:{
@@ -51,14 +52,16 @@ function draw(){
         moveSmoke(smoke);
         drawSmoke(smoke);
     }
+    moveRocket();
+    drawRocket();
 
 }
 
 function moveSmoke(smoke){
     smoke.x += smoke.velocity.x
     smoke.y += smoke.velocity.y
-    smoke.velocity.y *= 0.975
-    smoke.size += smoke.velocity.y/100
+    smoke.velocity.y *= 0.98
+    smoke.size += smoke.velocity.y/10
 }
 
 function drawSmoke(smoke){
@@ -69,7 +72,28 @@ function drawSmoke(smoke){
     pop();
 }
 
-function moveRocket(){
+function moveRocket(){ 
+    rocket.y += rocket.velocity.y
+    rocket.x += rocket.velocity.x
+    rocket.velocity.x *= 0.975
+    rocket.velocity.y *= 0.975
+    if (keyIsDown(LEFT_ARROW)) {
+        rocket.velocity.x += -0.2
+    }
+    if (keyIsDown(RIGHT_ARROW)) {
+        rocket.velocity.x += 0.2 
+    }
+    //allow it to jump once after touching a platform
+    if (keyIsDown(UP_ARROW)) {
+        rocket.velocity.y += -0.2
+    }
+    if (keyIsDown(DOWN_ARROW)) {
+        rocket.velocity.y += 0.2
+    }
+}
 
-
+function drawRocket(){
+    push();
+    ellipse(rocket.x,rocket.y,rocket.size);
+    pop();
 }
