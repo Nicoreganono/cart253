@@ -43,7 +43,7 @@ function createBullet() {
         size: 15,
         fill: 255,
         velocity: {
-            x: 100,
+            x: 30,
             y: 0,
         }
     };
@@ -76,6 +76,11 @@ function draw() {
         moveBubble(bubble);
         drawBubble(bubble);
 
+    }
+    for (let bullet of bullets) {
+        for (let bubble of bubbles) {
+            popBubble(bubble, bullet);
+        }
     }
 
     bubbleCount += 1
@@ -131,4 +136,13 @@ function drawGun() {
     rect(0, -5, gun.l / 2, gun.h);
     rotate(-0.5);
     pop();
+}
+
+function popBubble(bubble, bullet) {
+    let d = dist(bubble.x, bubble.y, bullet.x, bullet.y)
+    let overlap = (d < bubble.size / 2 + bullet.size / 2);
+    if (overlap) {
+        bubble.fill = 0;
+    }
+
 }
