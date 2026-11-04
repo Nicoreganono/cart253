@@ -1,5 +1,5 @@
 /**
- * To infinity loops
+ * The violence
  * Nicola Fournier
  * 
  * How far can you go on this rocket ship?
@@ -7,113 +7,128 @@
 
 //Let's try to make a rocket with asteroids
 "use strict"
-let smokes = [];
-
-let rocket = {
-    x: 200,
-    y: 550,
+let bullets = [];
+let bubbles = [];
+let bubbleCount = 0;
+let gun = {
+    x: undefined,
+    y: undefined,
     fill: 100,
-    size: 70,
-    velocity: {
-        x: 0,
-        y: 0,
-    }
-
+    h: 15,
+    l: 70,
 
 }
 function setup() {
-    createCanvas(400, 600);
+    createCanvas(600, 400);
 }
 
-function createSmoke() {
-    const newSmoke = {
-        x: rocket.x,
-        y: rocket.y,
+function createBubble() {
+    const newBubble = {
+        x: width,
+        y: random(15, height - 15),
         size: 30,
         fill: 255,
         velocity: {
-            x: random(-0.8, 0.8),
-            y: 15,
+            x: -10,
+            y: 0,
         }
     };
-    return newSmoke;
+    return newBubble;
+}
+
+function createBullet() {
+    const newBullet = {
+        x: gun.x + 70,
+        y: gun.y + 7.5,
+        size: 15,
+        fill: 255,
+        velocity: {
+            x: 100,
+            y: 0,
+        }
+    };
+    return newBullet;
 }
 
 function draw() {
     background(220);
 
-    const smoke = createSmoke();
-    smokes.push(smoke);
-    if (smokes.length >= 100) {
-        smokes.shift();
+    if (bullets.length >= 10) {
+        bullets.shift();
 
     }
-    for (let smoke of smokes) {
-        moveSmoke(smoke);
-        drawSmoke(smoke);
+    for (let bullet of bullets) {
+        moveBullet(bullet);
+        drawBullet(bullet);
     }
-    moveRocket();
-    drawRocket();
+    if (bubbles.length >= 50) {
+        bubbles.shift();
+
+    }
+    if (bubbleCount === 50) {
+        const bubble = createBubble();
+        bubbles.push(bubble);
+        bubbleCount = 0
+    }
+    for (let bubble of bubbles) {
+
+
+        moveBubble(bubble);
+        drawBubble(bubble);
+
+    }
+
+    bubbleCount += 1
+
+    gun.x = mouseX
+    gun.y = mouseY
+    drawGun();
+    text(bubbleCount, 100, 100)
 
 }
 
-function moveSmoke(smoke) {
-    smoke.x += smoke.velocity.x
-    smoke.y += smoke.velocity.y
-    smoke.velocity.y *= 0.98
-    smoke.size += smoke.velocity.y / 10
-    const d = dist(smoke.x, smoke.y, rocket.x, rocket.y)
-    smoke.fill = map(d, 0, 400, 100, 0, true)
+function moveBullet(bullet) {
+    bullet.x += bullet.velocity.x
+}
+function moveBubble(bubble) {
+    bubble.x += bubble.velocity.x
 }
 
-function drawSmoke(smoke) {
+function drawBullet(bullet) {
     push();
     noStroke();
     colorMode(HSB);
-    fill(10, smoke.fill, 100);
-    ellipse(smoke.x, smoke.y, smoke.size)
+    fill(10, bullet.fill, 100);
+    ellipse(bullet.x, bullet.y, bullet.size)
     pop();
 }
 
-function moveRocket() {
-    rocket.y += rocket.velocity.y
-    rocket.x += rocket.velocity.x
-    rocket.velocity.x *= 0.975
-    rocket.velocity.y *= 0.975
-    if (keyIsDown(LEFT_ARROW)) {
-        rocket.velocity.x += -0.2
-    }
-    if (keyIsDown(RIGHT_ARROW)) {
-        rocket.velocity.x += 0.2
-    }
-    //allow it to jump once after touching a platform
-    if (keyIsDown(UP_ARROW)) {
-        rocket.velocity.y += -0.2
-    }
-    if (keyIsDown(DOWN_ARROW)) {
-        rocket.velocity.y += 0.2
-    }
-
-    if (rocket.x >= width) {
-        rocket.velocity.x = 0;
-        rocket.x = width - 1;
-    }
-    if (rocket.x <= 0) {
-        rocket.velocity.x = 0;
-        rocket.x = 1;
-    }
-    if (rocket.y > height) {
-        rocket.velocity.y = 0;
-        rocket.y = height - 1
-    }
-    if (rocket.y < 0) {
-        rocket.velocity.y = 0;
-        rocket.y = 1;
-    }
+function drawBubble(bubble) {
+    push();
+    noStroke();
+    colorMode(HSB);
+    fill(bubble.fill);
+    ellipse(bubble.x, bubble.y, bubble.size)
+    pop();
 }
 
-function drawRocket() {
+function mousePressed() {
+    const bullet = createBullet();
+    bullets.push(bullet);
+}
+
+
+function drawGun() {
     push();
-    ellipse(rocket.x, rocket.y, rocket.size);
+    fill(gun.fill);
+    rect(gun.x, gun.y, gun.l, gun.h);
+    pop();
+
+    push();
+    fill(gun.fill);
+    translate(gun.x, gun.y)
+    rotate(2)
+    rect(0, -5, gun.l / 2, gun.h);
+    rotate(-0.5);
     pop();
 }
