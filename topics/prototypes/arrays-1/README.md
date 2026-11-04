@@ -12,7 +12,6 @@ This project simulates the flight of a rocket, a true soaring round sherical egg
 
 
 > - This project uses [p5.js](https://p5js.org).
-> - This project is heavily influenced by Dong Nguyen's Flappy Bird
 
 ## License
 

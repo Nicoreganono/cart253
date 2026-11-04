@@ -7,7 +7,7 @@ Learning how computers really work is useful on a number of levels I can't even 
 This will essentially be a compilation of various projects and prototypes from the beginning of my computation days in Creative Computation at Concordia.
 
 # Active journal: 
-[Journal](https://nicoreganono.github.io/cart253/journal)
+[Journal](https://nicoreganono.github.io/cart253/journal/journal.md)
 
 While self explanatory, this journal will have active updates to new projects, what I've learned and struggled with.
 
@@ -95,3 +95,20 @@ For this project, different types of events were implemented to add some level o
 [Shark Trio-Code](https://nicoreganono.github.io/cart253/topics/prototypes/functions-3/js/script.js)
 
 I reused code from previous projects and implemented parameters within them to make them more organized and also to allow easier multiplication of certain assets. This makes coding a much easier task, frankly.
+
+### Arrays Prototypes
+
+[To infinity loops](https://nicoreganono.github.io/cart253/topics/prototypes/arrays-1)
+![](./images/to-infinity-loops.png)
+
+[The violence](https://nicoreganono.github.io/cart253/topics/prototypes/arrays-2)
+![](./images/the-violence.png)
+
+[Self violence](https://nicoreganono.github.io/cart253/topics/prototypes/arrays-3)
+![](./images/self-violence.png)
+
+[To infinity loops-Code](https://nicoreganono.github.io/cart253/topics/prototypes/arrays-1/js/script.js)
+[The violence-Code](https://nicoreganono.github.io/cart253/topics/prototypes/arrays-2/js/script.js)
+[Self violence-Code](https://nicoreganono.github.io/cart253/topics/prototypes/arrays-3/js/script.js)
+
+I immediately thought of particles when arrays came into the picture, it was hard to represent much else. Arrays allow for further detailed and more complicated code, in a good way.

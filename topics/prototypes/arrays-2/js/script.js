@@ -107,7 +107,7 @@ function moveBullet(bullet) {
 function moveBubble(bubble) {
     bubble.x += bubble.velocity.x
 }
-
+//make the bullets
 function drawBullet(bullet) {
     push();
     noStroke();
@@ -116,7 +116,7 @@ function drawBullet(bullet) {
     ellipse(bullet.x, bullet.y, bullet.size)
     pop();
 }
-
+//make the bubbles
 function drawBubble(bubble) {
     push();
     noStroke();
@@ -125,13 +125,13 @@ function drawBubble(bubble) {
     ellipse(bubble.x, bubble.y, bubble.size)
     pop();
 }
-
+//the trigger of the gun
 function mousePressed() {
     const bullet = createBullet();
     bullets.push(bullet);
 }
 
-
+//make the gun
 function drawGun() {
     push();
     fill(gun.fill);
@@ -146,7 +146,7 @@ function drawGun() {
     rotate(-0.5);
     pop();
 }
-
+//establish a contact point for the bullets and bubbles
 function popBubble(bubble, bullet) {
     let d = dist(bubble.x, bubble.y, bullet.x, bullet.y)
     let overlap = (d < bubble.size / 2 + bullet.size / 2);

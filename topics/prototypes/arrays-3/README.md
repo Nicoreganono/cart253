@@ -1,18 +1,17 @@
-# Bird that flaps
+# Self violence
 
 Nicola Fournier
 
-[View this project online](https://nicoreganono.github.io/cart253/topics/prototypes/events-1)
+[View this project online](https://nicoreganono.github.io/cart253/topics/prototypes/arrays-3)
 
 ## Description
 
-This project is a rough recreation of infamous simple and not so easy game, flappy bird
+This is a simulated cigarette to experiment with arrays, loops and particles
 
 ## Attribution
 
 
 > - This project uses [p5.js](https://p5js.org).
-> - This project is heavily influenced by Dong Nguyen's Flappy Bird
 
 ## License
 

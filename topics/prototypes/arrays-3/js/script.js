@@ -1,27 +1,28 @@
 /**
- * The violence
+ * Self violence
  * Nicola Fournier
  * 
- * How far can you go on this rocket ship?
+ * Cigarettes ARE BAD for you
  */
 
-//Let's try to make a rocket with asteroids
+//Let's try to simulate a cigarette
 "use strict"
-let lights = [];
+//make an array for smoke particles
 let smokes = [];
+//make a cigarette from which the smoke comes from
 let cigarette = {
     x: 220,
     y: 240,
-    fill: 100,
+    fill: 200,
     h: 20,
     l: 300,
 
 }
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(400, 400,);
 }
 
-
+//make a function to create more smoke
 function createSmoke() {
     const newSmoke = {
         x: cigarette.x - 15,
@@ -29,8 +30,9 @@ function createSmoke() {
         size: 30,
         fill: 225,
         velocity: {
-            x: random(-10, 10),
-            y: -5,
+            //make it a sin function so it coils from the base
+            x: -10 * sin(frameCount / 10),
+            y: -3,
         }
     };
     return newSmoke;
@@ -38,8 +40,10 @@ function createSmoke() {
 
 function draw() {
     background(220);
+    //have the smoke constantly be created
     const smoke = createSmoke();
     smokes.push(smoke);
+    //make sure the smoke doesnt get out of hand
     if (smokes.length >= 100) {
         smokes.shift();
 
@@ -48,34 +52,37 @@ function draw() {
         moveSmoke(smoke);
         drawSmoke(smoke);
     }
-
+    //allow the cigarette to appear
     drawCigarette();
 
 }
-
+//establish the behaviour of the smoke
 function moveSmoke(smoke) {
     smoke.x += smoke.velocity.x
+    //make it zig zag as it rises
     if (smoke.x < cigarette.x) {
-        smoke.velocity.x += 0.8
+        smoke.velocity.x += 0.7
     } else if (smoke.x > cigarette.x) {
-        smoke.velocity.x -= 0.8
+        smoke.velocity.x -= 0.7
     }
+    //make it rise
     smoke.y += smoke.velocity.y
-    smoke.velocity.y *= 0.98
+    smoke.velocity.y *= 1.01
     smoke.size += smoke.velocity.y / 10
+    //make the smoke go lighter the further it is from the cigarette
     const d = dist(cigarette.x, cigarette.y, smoke.x, smoke.y)
-    smoke.fill = map(d, 0, 300, 50, 100, true)
+    smoke.fill = map(d, 0, 300, 70, 100, true)
 }
-
+//make the smoke
 function drawSmoke(smoke) {
     push();
     noStroke();
     colorMode(HSB);
     fill(10, 0, smoke.fill);
-    ellipse(smoke.x, smoke.y, smoke.size)
+    ellipse(smoke.x, smoke.y, smoke.size);
     pop();
 }
-
+//make the cigarette
 function drawCigarette() {
     push();
     fill(cigarette.fill);
