@@ -7,142 +7,82 @@
 
 //Let's try to make a rocket with asteroids
 "use strict"
-let bullets = [];
-let bubbles = [];
-let bubbleCount = 0;
-let gun = {
-    x: undefined,
-    y: undefined,
+let lights = [];
+let smokes = [];
+let cigarette = {
+    x: 220,
+    y: 240,
     fill: 100,
-    h: 15,
-    l: 70,
+    h: 20,
+    l: 300,
 
 }
 function setup() {
-    createCanvas(600, 400);
+    createCanvas(400, 400);
 }
 
-function createBubble() {
-    const newBubble = {
-        x: width,
-        y: random(15, height - 15),
+
+function createSmoke() {
+    const newSmoke = {
+        x: cigarette.x - 15,
+        y: cigarette.y + 15,
         size: 30,
-        fill: 255,
+        fill: 225,
         velocity: {
-            x: -10,
-            y: 0,
+            x: random(-10, 10),
+            y: -5,
         }
     };
-    return newBubble;
-}
-
-function createBullet() {
-    const newBullet = {
-        x: gun.x + 70,
-        y: gun.y + 7.5,
-        size: 15,
-        fill: 255,
-        velocity: {
-            x: 30,
-            y: 0,
-        }
-    };
-    return newBullet;
+    return newSmoke;
 }
 
 function draw() {
     background(220);
-
-    if (bullets.length >= 10) {
-        bullets.shift();
-
-    }
-    for (let bullet of bullets) {
-        moveBullet(bullet);
-        drawBullet(bullet);
-    }
-    if (bubbles.length >= 50) {
-        bubbles.shift();
+    const smoke = createSmoke();
+    smokes.push(smoke);
+    if (smokes.length >= 100) {
+        smokes.shift();
 
     }
-    if (bubbleCount === 50) {
-        const bubble = createBubble();
-        bubbles.push(bubble);
-        bubbleCount = 0
-    }
-    for (let bubble of bubbles) {
-
-
-        moveBubble(bubble);
-        drawBubble(bubble);
-
-    }
-    for (let bullet of bullets) {
-        for (let bubble of bubbles) {
-            popBubble(bubble, bullet);
-        }
+    for (let smoke of smokes) {
+        moveSmoke(smoke);
+        drawSmoke(smoke);
     }
 
-    bubbleCount += 1
-
-    gun.x = mouseX
-    gun.y = mouseY
-    drawGun();
-    text(bubbleCount, 100, 100)
+    drawCigarette();
 
 }
 
-function moveBullet(bullet) {
-    bullet.x += bullet.velocity.x
-}
-function moveBubble(bubble) {
-    bubble.x += bubble.velocity.x
+function moveSmoke(smoke) {
+    smoke.x += smoke.velocity.x
+    if (smoke.x < cigarette.x) {
+        smoke.velocity.x += 0.8
+    } else if (smoke.x > cigarette.x) {
+        smoke.velocity.x -= 0.8
+    }
+    smoke.y += smoke.velocity.y
+    smoke.velocity.y *= 0.98
+    smoke.size += smoke.velocity.y / 10
+    const d = dist(cigarette.x, cigarette.y, smoke.x, smoke.y)
+    smoke.fill = map(d, 0, 300, 50, 100, true)
 }
 
-function drawBullet(bullet) {
+function drawSmoke(smoke) {
     push();
     noStroke();
     colorMode(HSB);
-    fill(10, bullet.fill, 100);
-    ellipse(bullet.x, bullet.y, bullet.size)
+    fill(10, 0, smoke.fill);
+    ellipse(smoke.x, smoke.y, smoke.size)
     pop();
 }
 
-function drawBubble(bubble) {
+function drawCigarette() {
     push();
-    noStroke();
-    colorMode(HSB);
-    fill(bubble.fill);
-    ellipse(bubble.x, bubble.y, bubble.size)
+    fill(cigarette.fill);
+    rotate(0.1);
+    rect(cigarette.x, cigarette.y, cigarette.l, cigarette.h);
+    fill("red");
+    rect(cigarette.x, cigarette.y, 20, cigarette.h)
     pop();
-}
-
-function mousePressed() {
-    const bullet = createBullet();
-    bullets.push(bullet);
-}
-
-
-function drawGun() {
-    push();
-    fill(gun.fill);
-    rect(gun.x, gun.y, gun.l, gun.h);
-    pop();
-
-    push();
-    fill(gun.fill);
-    translate(gun.x, gun.y)
-    rotate(2)
-    rect(0, -5, gun.l / 2, gun.h);
-    rotate(-0.5);
-    pop();
-}
-
-function popBubble(bubble, bullet) {
-    let d = dist(bubble.x, bubble.y, bullet.x, bullet.y)
-    let overlap = (d < bubble.size / 2 + bullet.size / 2);
-    if (overlap) {
-        bubble.fill = 0;
-    }
 
 }
