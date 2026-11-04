@@ -1,12 +1,12 @@
-# Bird that flaps
+# To infinity loops
 
 Nicola Fournier
 
-[View this project online](https://nicoreganono.github.io/cart253/topics/prototypes/events-1)
+[View this project online](https://nicoreganono.github.io/cart253/topics/prototypes/arrays-1)
 
 ## Description
 
-This project is a rough recreation of infamous simple and not so easy game, flappy bird
+This project simulates the flight of a rocket, a true soaring round sherical egg
 
 ## Attribution
 
