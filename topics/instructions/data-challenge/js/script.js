@@ -1,43 +1,62 @@
 /**
- * Lines and more lines
+ * Totally cool new cars
  * Nicola Fournier
  * 
- * A series of lines across the canvas!
+ * A program to generate new car model names using dinosaurs.
+ * 
+ * Uses:
+ * Darius Kazemi's corpora repository
+ * https://github.com/dariusk/corpora/tree/master
  */
 
 "use strict";
 
+let carData = undefined;
+let dinosaurData = undefined;
+let langData = undefined;
+let lang = "fr";
+
+// Starts with the instruction
+let carName = "Click to generate a car name.";
+
 /**
- * Creates the canvas
+ * Load the car and dinosaur data
  */
-function setup() {
-    createCanvas(500, 500);
+async function preload() {
+    carData = await loadJSON("assets/data/cars.json");
+    dinosaurData = await loadJSON("assets/data/dinosaurs.json")
 }
 
 /**
- * Draws lines across the canvas with increasing thickness and
- * gradually lightening colour
- */
+ * Create the canvas
+*/
+async function setup() {
+    createCanvas(600, 400);
+
+    await preload();
+
+}
+
+/**
+ * Display the current main text (either instructions or a car)
+*/
 function draw() {
-    background("pink");
-    for(let x = 0; x <= width; x += 20){
-        push();
-        strokeWeight(20);
-        colorMode(HSB);
-        stroke(x/10);
-        line(x,0,x,height);
-        pop();
-    }
-    
-    let x = 0
-    let s = 0
-while (x <= width){
+    background(0);
 
-    x += 50;
-    s += 25;
-    stroke(s);
-    line(x, 0, x, height);
-    line(0, x, width, x);
 
+    push();
+    fill("pink");
+    textAlign(CENTER, CENTER);
+    textSize(32);
+    text(carName, width / 2, height / 2);
+    pop();
 }
+
+/**
+ * Generate a new car name
+ */
+function mousePressed() {
+    let car = random(carData.cars);
+    let dinosaur = random(dinosaurData.dinosaurs);
+    carName = car + dinosaur
 }
